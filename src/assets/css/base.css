@@ -102,6 +102,64 @@ body {
 .nav-links a:hover   { color: var(--text-1); background: var(--border); }
 .nav-links a.active  { color: var(--gold-l); }
 
+/* Nav dropdowns */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-toggle {
+    display: block; padding: 6px 13px;
+    font-size: .85em; font-weight: 500;
+    color: var(--text-2);
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color .15s, background .15s;
+    font-family: var(--ff-body);
+}
+
+.nav-toggle:hover {
+    color: var(--text-1);
+    background: var(--border);
+}
+
+.nav-submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    min-width: 200px;
+    margin-top: 8px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .15s, visibility .15s;
+    z-index: 10;
+}
+
+.nav-dropdown:hover .nav-submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-submenu a {
+    display: block;
+    padding: 10px 16px;
+    color: var(--text-2);
+    text-decoration: none;
+    font-size: .85em;
+    transition: color .15s, background .15s;
+}
+
+.nav-submenu a:hover {
+    background: var(--border);
+    color: var(--gold-l);
+}
+
 .nav-cta { margin-left: auto; }
 
 .btn-primary {

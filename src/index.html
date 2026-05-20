@@ -1,3 +1,6 @@
+---
+permalink: /index.html
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,11 +61,28 @@
             border-color: var(--gold);
             color: var(--gold-l);
         }
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        .section-title {
+            font-family: var(--ff-display);
+            font-size: 2em;
+            color: #f0ece3;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
             gap: 24px;
-            margin: 60px 0;
+            padding: 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none;
         }
         .post-card {
             background: var(--bg-card);
@@ -73,6 +93,9 @@
             display: flex;
             flex-direction: column;
             transition: border-color 0.2s, transform 0.2s;
+            flex-shrink: 0;
+            width: min(100%, 380px);
+            scroll-snap-align: start;
         }
         .post-card:hover {
             border-color: var(--gold-border);
@@ -99,12 +122,78 @@
             line-height: 1.6;
             flex-grow: 1;
         }
-        .section-title {
-            font-family: var(--ff-display);
-            font-size: 2em;
-            color: #f0ece3;
-            margin-bottom: 40px;
+        .carousel-controls {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            justify-content: center;
+        }
+        .carousel-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-1);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+        .carousel-btn:hover {
+            background: var(--border);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .dot.active {
+            background: var(--gold);
+            width: 24px;
+            border-radius: 4px;
+        }
+        .cta-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 40px;
             text-align: center;
+            margin-top: 80px;
+        }
+        .cta-section h3 {
+            font-family: var(--ff-display);
+            font-size: 1.8em;
+            color: #f0ece3;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            font-size: 1em;
+            color: #b5afa3;
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-section .btn-primary-lg {
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .post-card {
+                width: 90vw;
+            }
+            .carousel-controls {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -114,13 +203,36 @@
         <div class="nav-inner">
             <a href="/" class="site-logo">Cluenex</a>
             <ul class="nav-links" role="list">
-                <li><a href="/learn" class="active">Learn</a></li>
-                <li><a href="#">Markets</a></li>
-                <li><a href="#">Screener</a></li>
-                <li><a href="#">Options Flow</a></li>
+                <li><a href="/" class="active">Home</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Education</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="/learn/technical-analysis">Technical Analysis</a></li>
+                        <li><a href="#">Fundamental Analysis</a></li>
+                        <li><a href="#">Portfolio Management</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Tools</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="#">Markets</a></li>
+                        <li><a href="#">Screener</a></li>
+                        <li><a href="#">Stock Screening</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Resources</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Compare</a></li>
+                        <li><a href="#">Glossary</a></li>
+                        <li><a href="#">Methodology</a></li>
+                        <li><a href="#">Smart Money</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="nav-cta">
-                <a href="https://cluenex.com/signup" class="btn-primary">Start Free</a>
+                <a href="https://cluenex.com/login" class="btn-primary">Start Free</a>
             </div>
         </div>
     </nav>
@@ -131,33 +243,40 @@
             <h1>Learn Stock Market & Trading</h1>
             <p>Free, LLM-optimized education on technical analysis, momentum indicators, and smart money signals.</p>
             <div class="cta-buttons">
-                <a href="/learn/technical-analysis/rsi-explained/" class="btn-lg btn-primary-lg">Read Articles</a>
+                <a href="#featured" class="btn-lg btn-primary-lg">Explore Articles</a>
                 <a href="https://cluenex.com" class="btn-lg btn-secondary-lg">Visit Cluenex →</a>
             </div>
         </div>
 
-        <!-- FEATURED POSTS -->
-        <section>
-            <h2 class="section-title">Featured Learning</h2>
-            <div class="posts-grid">
-                <a href="/learn/technical-analysis/rsi-explained/" class="post-card">
-                    <div class="post-tag">Technical Analysis</div>
-                    <div class="post-title">What is RSI: How Traders Use Momentum to Time Entries and Exits</div>
-                    <div class="post-desc">RSI measures price momentum on a 0–100 scale. Learn how to identify overbought/oversold conditions and spot divergence signals.</div>
-                </a>
-
-                <a href="#" class="post-card" style="opacity: 0.5; cursor: default;">
-                    <div class="post-tag">Coming Soon</div>
-                    <div class="post-title">MACD Explained: Detecting Momentum Shifts</div>
-                    <div class="post-desc">Another momentum oscillator that complements RSI. Learn when to use MACD over RSI for trend-following strategies.</div>
-                </a>
-
-                <a href="#" class="post-card" style="opacity: 0.5; cursor: default;">
-                    <div class="post-tag">Coming Soon</div>
-                    <div class="post-title">Options Flow: Reading Smart Money Signals</div>
-                    <div class="post-desc">Understand what large options trades reveal about institutions' views. Confirm momentum shifts with multi-signal confirmation.</div>
-                </a>
+        <!-- FEATURED CAROUSEL -->
+        <section id="featured">
+            <h2 class="section-title">Latest Learning</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="carousel">
+                    {%- set latestPosts = collections.posts | slice(0, 3) -%}
+                    {%- for post in latestPosts %}
+                    <a href="{{ post.url }}" class="post-card">
+                        <div class="post-tag">{{ post.data.category }}</div>
+                        <div class="post-title">{{ post.data.title }}</div>
+                        <div class="post-desc">{{ post.data.description }}</div>
+                    </a>
+                    {%- endfor %}
+                </div>
             </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prev-btn">← Previous</button>
+                <button class="carousel-btn" id="next-btn">Next →</button>
+            </div>
+            <div class="carousel-dots" id="dots">
+                <!-- Dots dynamically added -->
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <h3>Unlock Premium Insights</h3>
+            <p>Join traders and institutions using real-time sentiment, options flow, and technical analysis on 5,000+ US tickers. Limited free access — upgrade today.</p>
+            <a href="https://cluenex.com/login" class="btn-lg btn-primary-lg">Start Free</a>
         </section>
 
         <!-- INFO -->
@@ -180,6 +299,63 @@
             <span>For educational purposes only. Not financial advice.</span>
         </div>
     </footer>
+
+    <script>
+        // Carousel functionality
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dotsContainer = document.getElementById('dots');
+
+        function initCarousel() {
+            // Create dots based on number of cards
+            const cards = carousel.querySelectorAll('.post-card');
+            dotsContainer.innerHTML = '';
+            cards.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.className = `dot ${idx === 0 ? 'active' : ''}`;
+                dot.onclick = () => scrollToIndex(idx);
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function scrollToIndex(idx) {
+            const cardWidth = carousel.querySelector('.post-card')?.offsetWidth || 380;
+            const gap = 24;
+            carousel.scrollLeft = idx * (cardWidth + gap);
+            updateDots(idx);
+        }
+
+        function updateDots(idx) {
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === idx);
+            });
+        }
+
+        prevBtn.onclick = () => {
+            carousel.scrollLeft -= (carousel.querySelector('.post-card')?.offsetWidth || 380) + 24;
+        };
+
+        nextBtn.onclick = () => {
+            carousel.scrollLeft += (carousel.querySelector('.post-card')?.offsetWidth || 380) + 24;
+        };
+
+        // Track scroll for dot updates
+        carousel.addEventListener('scroll', () => {
+            const cardWidth = carousel.querySelector('.post-card')?.offsetWidth || 380;
+            const idx = Math.round(carousel.scrollLeft / (cardWidth + 24));
+            updateDots(Math.min(idx, 2));
+        });
+
+        // Initialize on page load
+        window.addEventListener('load', initCarousel);
+        // Also init immediately in case load fires too late
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCarousel);
+        } else {
+            initCarousel();
+        }
+    </script>
 
     <script src="/assets/js/main.js"></script>
 </body>
