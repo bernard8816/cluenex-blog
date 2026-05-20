@@ -21,6 +21,8 @@ breadcrumbs:
 
 Browse our collection of technical analysis guides:
 
-- [RSI Explained](/learn/technical-analysis/rsi-explained/)
-- [Moving Averages](/learn/technical-analysis/moving-averages/)
-- [MACD Explained](/learn/technical-analysis/macd-explained/)
+{%- for article in collections.posts | reverse %}
+{%- if article.data.category == "Technical Analysis" %}
+- [{{ article.data.title }}]({{ article.url }})
+{%- endif %}
+{%- endfor %}
