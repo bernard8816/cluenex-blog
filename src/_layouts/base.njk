@@ -80,7 +80,6 @@
         <div class="nav-inner">
             <a href="https://learn.cluenex.com" class="site-logo">Cluenex</a>
             <ul class="nav-links" role="list">
-                <li><a href="https://learn.cluenex.com" class="active">Home</a></li>
                 <li class="nav-dropdown">
                     <button class="nav-toggle" aria-expanded="false">Education</button>
                     <ul class="nav-submenu" role="list">
@@ -241,6 +240,21 @@
     </footer>
 
     <script src="/assets/js/main.js"></script>
+
+    <script>
+        // Nav dropdown toggle for mobile
+        document.querySelectorAll('.nav-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.parentElement;
+                const submenu = dropdown.querySelector('.nav-submenu');
+                if (submenu) {
+                    submenu.style.opacity = submenu.style.opacity === '1' ? '0' : '1';
+                    submenu.style.visibility = submenu.style.visibility === 'visible' ? 'hidden' : 'visible';
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
