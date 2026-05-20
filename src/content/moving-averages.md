@@ -24,7 +24,7 @@ keyTakeaways:
   - "Fast MA (20, 50) = responsive to recent changes; Slow MA (200) = confirms long-term trend. Use fast + slow crossover for entry signals."
   - "Golden Cross (50-MA crosses above 200-MA) = bullish; Death Cross (50-MA crosses below 200-MA) = bearish. Highest-probability trend reversal signal."
   - "Moving averages act as dynamic support/resistance. Price bouncing off a rising 200-MA confirms uptrend strength; breaks below signal trend reversal."
-  - "On Cluenex, moving averages overlay with real-time sentiment and options flow to confirm trend signals across 5,000+ US tickers."
+  - "On Cluenex, moving averages overlay with real-time sentiment scores to confirm trend signals across the top 1,000 US-listed stocks."
 layout: base.njk
 permalink: /learn/technical-analysis/moving-averages/
 ---
@@ -68,7 +68,7 @@ Multiplier = 2 ÷ (Period + 1) = 2 ÷ 6 = 0.333
 - **50-period MA (medium)** — Balanced responsiveness. Common for swing trading.
 - **200-period MA (slow)** — Confirms long-term trend. Rarely false, but lags price action.
 
-On Cluenex, moving averages are calculated in real time across 5,000+ US-listed tickers, displayed alongside sentiment intensity and options flow.
+On Cluenex, moving averages are calculated in real time across the top 1,000 US-listed stocks, displayed alongside real-time sentiment intensity scores.
 
 ## Moving Average Zones
 
@@ -184,7 +184,7 @@ Moving averages are trend followers — they perform poorly in ranges. Use RSI o
 <div class="callout callout-red">
 <div class="callout-label">✗ Mistake 4</div>
 <p class="callout-text"><strong>"I should only use moving averages."</strong><br>
-MAs work best paired with momentum (RSI) or volume. On Cluenex, MAs combine with real-time sentiment and options flow for higher-probability setups.</p>
+MAs work best paired with momentum (RSI) or volume. On Cluenex, MAs combine with real-time sentiment scores for higher-probability setups.</p>
 </div>
 
 ## Example: Golden Cross on AAPL
@@ -259,9 +259,9 @@ Golden Cross signal on **AAPL** daily chart, May 2024:
 
 ## How Cluenex Uses Moving Averages
 
-Cluenex displays 20-MA, 50-MA, and 200-MA alongside real-time sentiment scores and options flow data. When a Golden Cross aligns with rising sentiment and call-to-put ratios, the probability of a sustained uptrend increases significantly.
+Cluenex displays 20-MA, 50-MA, and 200-MA alongside real-time sentiment scores across the top 1,000 US-listed stocks. When a Golden Cross aligns with rising sentiment intensity, the probability of a sustained uptrend increases significantly.
 
-Cluenex's snapshot generator also flags *MA alignment shifts* — moments when the fast/medium/slow structure changes from bullish to bearish or vice versa, often before institutional traders react. This multi-signal approach reduces false signals and improves entry quality across 5,000+ US-listed tickers.
+Cluenex's snapshot generator also flags *MA alignment shifts* — moments when the fast/medium/slow structure changes from bullish to bearish or vice versa, often before institutional traders react. This multi-signal approach reduces false signals and improves entry quality for traders.
 
 ## Frequently Asked Questions
 
@@ -282,3 +282,11 @@ Cluenex's snapshot generator also flags *MA alignment shifts* — moments when t
 
 - **Should I use moving averages on micro-cap stocks?**
   MAs work best on liquid, heavily-traded stocks. Low-volume stocks produce choppy MAs that whipsaw frequently. Always check average daily volume and price before trading with MA signals.
+
+## Related Concepts
+
+- [RSI Explained](/learn/technical-analysis/rsi-explained/) — Pair moving averages with RSI for momentum confirmation
+- [MACD Explained](/learn/technical-analysis/macd-explained/) — MACD uses moving averages as its foundation
+- [Golden Cross](/glossary/golden-cross/) — The highest-probability MA crossover signal
+- [Death Cross](/glossary/death-cross/) — Bearish MA crossover signal
+- [Trend Analysis](/glossary/trend/) — Moving averages are the foundation of trend identification

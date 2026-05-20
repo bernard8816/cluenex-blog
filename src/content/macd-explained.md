@@ -24,7 +24,7 @@ keyTakeaways:
   - "<strong>MACD line</strong> crosses above <strong>signal line</strong> = bullish momentum (buy signal). Cross below = bearish momentum (sell signal). Highest probability when histogram diverges."
   - "<strong>Histogram</strong> (MACD minus signal line) shows momentum strength. Expanding histogram = strengthening trend; shrinking = weakening trend before reversal."
   - "<strong>Zero-line crossover</strong> — MACD crosses above zero = trend shift from bearish to bullish. Cross below zero = bearish shift. Confirms major momentum change."
-  - "On Cluenex, MACD displays alongside RSI, moving averages, and real-time sentiment to confirm momentum shifts across 5,000+ US tickers with minimal false signals."
+  - "On Cluenex, MACD displays alongside RSI, moving averages, and real-time sentiment scores to confirm momentum shifts across the top 1,000 US-listed stocks."
 layout: base.njk
 permalink: /learn/technical-analysis/macd-explained/
 ---
@@ -186,7 +186,7 @@ Zero-line crosses happen *after* significant momentum shift. Price may have alre
 <div class="callout callout-red">
 <div class="callout-label">✗ Mistake 3</div>
 <p class="callout-text"><strong>"I trade MACD in isolation."</strong><br>
-MACD alone generates too many whipsaws in choppy markets. Pair with RSI (overbought/oversold), moving averages (trend), volume, or sentiment. On Cluenex, MACD combines with all three for optimal entries.</p>
+MACD alone generates too many whipsaws in choppy markets. Pair with RSI (overbought/oversold), moving averages (trend), volume, or sentiment. On Cluenex, MACD combines with all these signals for optimal entries.</p>
 </div>
 
 <div class="callout callout-red">
@@ -283,7 +283,7 @@ Bullish MACD crossover with histogram expansion on **TSLA** daily chart, May 202
 
 ## How Cluenex Uses MACD
 
-Cluenex displays MACD with automatic histogram color coding (green = bullish, red = bearish) alongside RSI, moving averages, and real-time sentiment scores. When MACD crossover aligns with rising sentiment and call-to-put ratio increase, the probability of a sustained move climbs to 70%+.
+Cluenex displays MACD with automatic histogram color coding (green = bullish, red = bearish) alongside RSI, moving averages, and real-time sentiment scores. When MACD crossover aligns with rising sentiment intensity, the probability of a sustained move climbs significantly.
 
 Cluenex's momentum scanner also flags *MACD divergence* — situations where price makes new highs but MACD makes lower highs — signaling momentum failure before price reverses. This proactive detection prevents traders from holding losing positions.
 
@@ -306,3 +306,11 @@ Cluenex's momentum scanner also flags *MACD divergence* — situations where pri
 
 - **What success rate for MACD crossover signals?**
   Signal line crossover alone: 45-55% win rate. Signal line + histogram confirmation + price action filter: 65-75% win rate. On Cluenex, adding sentiment data increases to 70-80%.
+
+## Related Concepts
+
+- [RSI Explained](/learn/technical-analysis/rsi-explained/) — Use RSI to confirm MACD momentum shifts
+- [Moving Averages](/learn/technical-analysis/moving-averages/) — MACD is built from exponential moving averages
+- [Momentum Oscillator](/glossary/momentum-oscillator/) — MACD is a type of momentum oscillator
+- [Histogram Divergence](/glossary/divergence/) — MACD histogram expansion indicates trend strength
+- [Signal Line Crossover](/glossary/signal-line/) — The primary MACD trading signal

@@ -24,7 +24,7 @@ keyTakeaways:
   - "RSI above <data value=\"70\">70</data> = overbought (potential sell); below <data value=\"30\">30</data> = oversold (potential buy). Context matters — not the number alone."
   - "Standard period is <strong>14 bars</strong>. Use 7–9 for day trading; 21–28 for weekly charts."
   - "<strong>Divergence</strong> — price hits a new extreme but RSI does not — is the highest-probability RSI signal and often precedes trend reversals."
-  - "On Cluenex, RSI is displayed alongside real-time sentiment scores and options flow to confirm momentum shifts across 5,000+ US tickers."
+  - "On Cluenex, RSI is displayed alongside real-time sentiment scores to confirm momentum shifts across the top 1,000 US-listed stocks."
 layout: base.njk
 permalink: /learn/technical-analysis/rsi-explained/
 ---
@@ -56,7 +56,7 @@ Period selection affects sensitivity vs. reliability:
 - **14 periods (default)** — standard for swing trading (days to weeks).
 - **21–28 periods** — slower, fewer but higher-confidence setups. Suited for position trading and weekly charts.
 
-RSI is mean-reverting: extreme readings above 80 or below 20 rarely persist. On Cluenex, RSI is calculated in real time across over 5,000 US-listed tickers, displayed alongside sentiment intensity and options flow.
+RSI is mean-reverting: extreme readings above 80 or below 20 rarely persist. On Cluenex, RSI is calculated in real time across the top 1,000 US-listed stocks, displayed alongside real-time sentiment intensity scores.
 
 ## RSI Threshold Reference
 Each RSI zone carries a distinct interpretation:
@@ -173,7 +173,7 @@ A 14-period RSI on a 1-minute chart is too slow. Use 5–7 periods for sub-hourl
 <div class="callout callout-red">
 <div class="callout-label">✗ Mistake 4</div>
 <p class="callout-text"><strong>"I should trade RSI in isolation."</strong><br>
-RSI alone leads to whipsaws. Pair with volume, trend direction, support/resistance, or — on Cluenex — real-time sentiment and options flow.</p>
+RSI alone leads to whipsaws. Pair with volume, trend direction, support/resistance, or — on Cluenex — real-time sentiment scores for confirmation.</p>
 </div>
 
 ## Example: Bearish Divergence on NVDA
@@ -240,9 +240,9 @@ Bearish divergence signal on **NVDA** daily chart, November 2024:
 </div>
 
 ## How Cluenex Uses RSI
-Cluenex displays RSI alongside real-time sentiment scores and options flow data. When RSI above 70 aligns with a sentiment drop and options flow shows heavy put-call ratios, the probability of a reversal increases significantly.
+Cluenex displays RSI alongside real-time sentiment scores across the top 1,000 US-listed stocks. When RSI above 70 aligns with a sentiment score drop, the probability of a reversal increases significantly.
 
-Cluenex's <abbr title="Artificial Intelligence">AI</abbr> snapshot generator also flags *momentum divergences* — situations where RSI and sentiment readings diverge, signaling a potential reversal before price action becomes obvious. This multi-signal approach reduces whipsaws and improves entry quality across 5,000+ US-listed tickers.
+Cluenex's <abbr title="Artificial Intelligence">AI</abbr> snapshot generator also flags *momentum divergences* — situations where RSI and sentiment readings diverge, signaling a potential reversal before price action becomes obvious. This multi-signal approach reduces whipsaws and improves entry quality for traders.
 
 ## Frequently Asked Questions
 - **What's the difference between a 14-period RSI and a 7-period RSI?**
@@ -258,7 +258,15 @@ Cluenex's <abbr title="Artificial Intelligence">AI</abbr> snapshot generator als
   Yes, but use a 5 or 7-period RSI instead of 14. Shorter timeframes require shorter lookback windows. A 14-period RSI on a 1-minute chart is too slow and lags price moves, making entries late.
 
 - **What's the success rate of RSI overbought/oversold signals?**
-  Overbought and oversold signals alone have a roughly 50% win rate — little better than a coin flip. When combined with divergence, price action confirmation, or additional indicators (volume, sentiment, options flow), the win rate climbs to 65–75%.
+  Overbought and oversold signals alone have a roughly 50% win rate — little better than a coin flip. When combined with divergence, price action confirmation, or additional indicators (volume, sentiment scores), the win rate climbs to 65–75%.
 
 - **Does RSI work on all stocks or only liquid ones?**
   RSI works best on liquid, heavily-traded stocks (AAPL, MSFT, NVDA, TSLA). Illiquid or low-volume stocks produce choppy RSI that whipsaws frequently. Always check average daily volume before relying on RSI signals.
+
+## Related Concepts
+
+- [MACD Explained](/learn/technical-analysis/macd-explained/) — Combine MACD with RSI for momentum confirmation
+- [Moving Averages](/learn/technical-analysis/moving-averages/) — Use moving averages to confirm RSI trend direction
+- [Divergence](/glossary/divergence/) — RSI's highest-probability signal pattern
+- [Overbought](/glossary/overbought/) — RSI readings above 70 indicate overbought conditions
+- [Momentum Oscillator](/glossary/momentum-oscillator/) — RSI is a type of momentum oscillator
