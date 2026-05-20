@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta -->
+    <meta name="description" content="{{ description }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cluenex.com{{ page.url }}">
+    <meta property="og:site_name" content="Cluenex">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="author" content="Cluenex">
+    <meta name="keywords" content="{{ keywords | join(', ') }}">
+    <link rel="canonical" href="https://cluenex.com{{ page.url }}">
+
+    <title>{{ title }} | Cluenex</title>
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cluenex.com{{ page.url }}"
+      },
+      "headline": "{{ title }}",
+      "description": "{{ description }}",
+      "datePublished": "{{ date | isoDate }}",
+      "dateModified": "{{ dateModified | isoDate }}",
+      "author": {
+        "@type": "Organization",
+        "name": "{{ author }}",
+        "url": "https://cluenex.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cluenex",
+        "url": "https://cluenex.com"
+      },
+      "articleSection": "{{ category }}",
+      "keywords": "{{ keywords | join(', ') }}",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",                    "item": "https://cluenex.com" },
+        { "@type": "ListItem", "position": 2, "name": "Learn",                   "item": "https://cluenex.com/learn" },
+        { "@type": "ListItem", "position": 3, "name": "{{ breadcrumbs[0] }}", "item": "https://cluenex.com/learn/{{ breadcrumbs[1] }}" },
+        { "@type": "ListItem", "position": 4, "name": "{{ title }}",             "item": "https://cluenex.com{{ page.url }}" }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+</head>
+<body>
+
+    <!-- Reading Progress -->
+    <div id="progress" role="progressbar" aria-label="Reading progress"></div>
+
+    <!-- SITE NAV -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="https://cluenex.com" class="site-logo">Cluenex</a>
+            <ul class="nav-links" role="list">
+                <li><a href="https://cluenex.com/learn" class="active">Learn</a></li>
+                <li><a href="#">Markets</a></li>
+                <li><a href="#">Screener</a></li>
+                <li><a href="#">Options Flow</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://cluenex.com/signup" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrap">
+
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="https://cluenex.com">Home</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <a href="https://cluenex.com/learn">Learn</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <a href="https://cluenex.com/learn/{{ breadcrumbs[1] }}">{{ breadcrumbs[0] }}</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <span class="breadcrumb-cur">{{ title }}</span>
+        </nav>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header">
+            <a href="https://cluenex.com/learn/{{ breadcrumbs[1] }}" class="cat-badge">
+                {{ breadcrumbs[0] }}
+            </a>
+
+            <h1 class="article-title" itemprop="headline">
+                {{ title }}
+            </h1>
+
+            <div class="article-meta">
+                <span>By <strong>{{ author }}</strong></span>
+                <span class="meta-sep">·</span>
+                <span>Updated <time datetime="{{ date | isoDate }}" itemprop="dateModified">{{ date | dateFilter }}</time></span>
+                <span class="meta-sep">·</span>
+                <span>{{ readingTime }} min read</span>
+                <span class="meta-sep">·</span>
+                <span class="meta-url">cluenex.com{{ page.url }}</span>
+            </div>
+
+            <p class="article-lead">
+                {{ excerpt }}
+            </p>
+        </header>
+
+        <!-- KEY TAKEAWAYS -->
+        {% if keyTakeaways %}
+        <aside class="key-takeaways" aria-label="Key Takeaways">
+            <div class="kt-header">
+                <span class="kt-tag">KEY</span>
+                <span class="kt-label">Takeaways</span>
+            </div>
+            <ul>
+                {% for takeaway in keyTakeaways %}
+                <li>{{ takeaway }}</li>
+                {% endfor %}
+            </ul>
+        </aside>
+        {% endif %}
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="article-layout">
+
+            <!-- ARTICLE BODY -->
+            <article class="article-body"
+                     itemscope itemtype="https://schema.org/Article">
+
+                <meta itemprop="headline" content="{{ title }}">
+                <meta itemprop="datePublished" content="{{ date | isoDate }}">
+                <meta itemprop="author" content="{{ author }}">
+                <meta itemprop="url" content="https://cluenex.com{{ page.url }}">
+
+                {{ content | safe }}
+
+            </article>
+
+            <!-- SIDEBAR - TABLE OF CONTENTS -->
+            <aside class="toc-sidebar" aria-label="Table of contents">
+                <div class="toc-head">On this page</div>
+                <nav>
+                    <ul class="toc-nav" role="list">
+                        <li><a href="#definition" class="toc-link">01 — Definition</a></li>
+                        <li><a href="#how-rsi-works" class="toc-link">02 — How It Works</a></li>
+                        <li><a href="#rsi-threshold-reference" class="toc-link">03 — Thresholds</a></li>
+                        <li><a href="#how-to-use-rsi-in-practice" class="toc-link">04 — How to Use</a></li>
+                        <li><a href="#common-mistakes" class="toc-link">05 — Mistakes</a></li>
+                        <li><a href="#example-bearish-divergence-on-nvda" class="toc-link">06 — Example</a></li>
+                        <li><a href="#how-cluenex-uses-rsi" class="toc-link">07 — Cluenex</a></li>
+                        <li><a href="#frequently-asked-questions" class="toc-link">08 — FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="toc-rule"></div>
+
+                <div class="toc-cta">
+                    <div class="toc-cta-label">Try Cluenex</div>
+                    <p class="toc-cta-text">See RSI alongside real-time sentiment and options flow on 5,000+ tickers.</p>
+                    <a href="https://cluenex.com/signup" class="btn-sm">Start Free</a>
+                </div>
+            </aside>
+
+        </div><!-- /.article-layout -->
+
+        <!-- RELATED ARTICLES -->
+        <section class="related" aria-labelledby="related-head">
+            <div class="related-head" id="related-head">Continue Learning</div>
+            <div class="related-grid">
+                {% for post in collections.posts | slice(0, 3) %}
+                {% if post.data.title != title %}
+                <a href="{{ post.url }}" class="related-card">
+                    <div class="related-tag">{{ post.data.category }}</div>
+                    <div class="related-title">{{ post.data.title }}</div>
+                    <div class="related-desc">{{ post.data.description }}</div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+
+    </div><!-- /.wrap -->
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>
+                © 2024 Cluenex ·
+                <a href="https://cluenex.com/learn">Learn</a> ·
+                <a href="https://cluenex.com">Home</a>
+            </span>
+            <span>For educational purposes only. Not financial advice.</span>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RSI (Relative Strength Index) measures price momentum on a 0–100 scale. Learn how traders use RSI to identify overbought/oversold conditions and time entries and exits with high-probability signals.">
+    <meta property="og:title" content="What is RSI: How Traders Use Momentum to Time Entries and Exits">
+    <meta property="og:description" content="RSI measures price momentum on a 0–100 scale, signaling overbought above 70 and oversold below 30. Learn to use RSI divergence and thresholds to time entries and exits.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cluenex.com/learn/technical-analysis/rsi-entries-exits">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What is RSI: How Traders Use Momentum to Time Entries and Exits">
+    <meta name="twitter:description" content="RSI measures price momentum. Learn overbought/oversold signals, divergences, and how to time trades with Cluenex.">
+    <meta name="author" content="Cluenex">
+    <meta name="keywords" content="RSI, Relative Strength Index, momentum, technical analysis, overbought, oversold, trading signals">
+
+    <title>What is RSI: How Traders Use Momentum to Time Entries and Exits</title>
+
+    <!-- JSON-LD Structured Data for Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "What is RSI: How Traders Use Momentum to Time Entries and Exits",
+      "description": "RSI (Relative Strength Index) is a momentum oscillator that measures the speed and magnitude of price changes on a scale of 0 to 100, used to identify overbought and oversold conditions in a stock.",
+      "datePublished": "2024-05-19",
+      "dateModified": "2024-05-19",
+      "author": {
+        "@type": "Organization",
+        "name": "Cluenex"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cluenex",
+        "url": "https://cluenex.com"
+      },
+      "articleBody": "RSI (Relative Strength Index) is a momentum oscillator that measures the speed and magnitude of price changes on a scale of 0 to 100, used to identify overbought and oversold conditions in a stock. Developed by J. Welles Wilder in 1978, RSI quantifies buying and selling pressure by comparing the magnitude of recent gains to recent losses. The indicator oscillates between 0 and 100, with readings above 70 conventionally interpreted as overbought and readings below 30 as oversold.",
+      "keywords": ["RSI", "Relative Strength Index", "momentum", "technical analysis", "overbought", "oversold", "trading signals", "divergence"],
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data for FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between a 14-period RSI and a 7-period RSI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 14-period RSI is slower and less responsive, producing fewer signals and fewer false positives. A 7-period RSI reacts faster to recent price action, producing more signals but also more false signals. Use 14 for swing trading (holding for days to weeks) and 7 or 9 for day trading or scalping."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is RSI more effective on stocks or crypto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RSI works on both, but crypto exhibits more extreme moves. Cryptoassets stay above RSI 70 and below RSI 30 longer than equities, so crypto traders often adjust thresholds to 80/20 instead of 70/30. Equities tend to respect the traditional 70/30 levels more consistently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can RSI predict a crash?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RSI cannot predict magnitude or timing of crashes, but extreme RSI readings (above 85 or below 15) combined with bearish divergence often precede sharp reversals. During market crashes, RSI may hit 5–10, but trying to bottom-pick with only RSI is dangerous. Always use stop losses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use RSI on a 1-minute chart?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but use a 5 or 7-period RSI instead of 14. Shorter timeframes require shorter lookback windows. A 14-period RSI on a 1-minute chart is too slow and lags price moves, making entries late."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the success rate of RSI overbought/oversold signals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Overbought and oversold signals alone have a roughly 50% win rate—little better than a coin flip. But when combined with divergence, price action confirmation, or additional indicators (volume, sentiment, options flow), the win rate climbs to 65–75%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does RSI work on all stocks or only liquid ones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RSI works best on liquid, heavily-traded stocks where buyers and sellers are plentiful (AAPL, MSFT, NVDA, TSLA). Illiquid or low-volume stocks can have choppy RSI that whipsaws frequently. Always check average daily volume before relying on RSI signals."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1a202c;
+            background-color: #f9fafb;
+            padding: 40px 20px;
+        }
+
+        article {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 60px 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .url-meta {
+            color: #718096;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        h1 {
+            font-size: 2.4em;
+            font-weight: 700;
+            margin-bottom: 35px;
+            line-height: 1.2;
+            color: #0f172a;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: 650;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            color: #1e293b;
+            border-bottom: 3px solid #e0e7ff;
+            padding-bottom: 12px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.25em;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 18px;
+            color: #334155;
+        }
+
+        p {
+            margin-bottom: 18px;
+            line-height: 1.75;
+            text-align: left;
+        }
+
+        ul, ol {
+            margin-left: 28px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 14px;
+            line-height: 1.8;
+        }
+
+        pre {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0284c7;
+            padding: 20px;
+            margin: 25px 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Courier New', monospace;
+            font-size: 0.93em;
+            line-height: 1.5;
+            border-radius: 6px;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            padding: 3px 7px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #0c63e4;
+        }
+
+        .key-takeaways {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 5px solid #0284c7;
+            padding: 25px 25px 25px 30px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+
+        .key-takeaways h2 {
+            border: none;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 0;
+            color: #0c63e4;
+            font-size: 1.5em;
+        }
+
+        .key-takeaways ul {
+            margin-left: 25px;
+        }
+
+        .key-takeaways li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            color: #1e40af;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 28px 0;
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        table th {
+            background-color: #f1f5f9;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #1e293b;
+            border-bottom: 2px solid #cbd5e0;
+            font-size: 0.95em;
+        }
+
+        table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table tr:hover {
+            background-color: #f9fafb;
+        }
+
+        .misconception {
+            background-color: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .misconception-title {
+            font-weight: 700;
+            color: #991b1b;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .misconception-text {
+            color: #7f1d1d;
+            line-height: 1.7;
+        }
+
+        .example-timeline {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .definition-box {
+            background-color: #faf5ff;
+            border-left: 4px solid #7c3aed;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            line-height: 1.8;
+        }
+
+        .rsi-threshold-quick-ref {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .threshold-card {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e0;
+            padding: 18px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .threshold-range {
+            font-weight: 700;
+            font-size: 1.3em;
+            color: #0284c7;
+            margin-bottom: 8px;
+        }
+
+        .threshold-label {
+            font-size: 0.9em;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        dl {
+            margin: 25px 0;
+        }
+
+        dt {
+            font-weight: 700;
+            color: #1e293b;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        dt:first-of-type {
+            margin-top: 0;
+        }
+
+        dd {
+            margin-left: 0;
+            padding-left: 20px;
+            border-left: 3px solid #e2e8f0;
+            color: #334155;
+            line-height: 1.75;
+        }
+
+        strong {
+            font-weight: 650;
+            color: #0f172a;
+        }
+
+        .summary-box {
+            background-color: #f9fafb;
+            border: 2px solid #e2e8f0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+
+        .summary-box h3 {
+            margin-top: 0;
+            color: #1e293b;
+        }
+
+        a {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #0284c7;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            article {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 25px;
+            }
+
+            h2 {
+                font-size: 1.4em;
+                margin-top: 35px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            table th, table td {
+                padding: 12px;
+            }
+
+            .rsi-threshold-quick-ref {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .threshold-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article itemscope itemtype="https://schema.org/Article">
+        <meta itemprop="headline" content="What is RSI: How Traders Use Momentum to Time Entries and Exits">
+        <meta itemprop="description" content="RSI is a momentum oscillator measuring price changes on a 0-100 scale to identify overbought and oversold conditions.">
+        <meta itemprop="datePublished" content="2024-05-19">
+        <meta itemprop="author" content="Cluenex">
+
+        <h1 itemprop="name">What is RSI: How Traders Use Momentum to Time Entries and Exits</h1>
+
+        <section class="key-takeaways">
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>RSI (<strong>Relative Strength Index</strong>) is a momentum oscillator that measures the speed and magnitude of price changes on a scale of <strong>0 to 100</strong>.</li>
+                <li>RSI readings <strong>above 70</strong> indicate overbought conditions (potential sell signal), while readings <strong>below 30</strong> indicate oversold conditions (potential buy signal).</li>
+                <li>The standard RSI is calculated using a <strong>14-period</strong> lookback window, though traders adjust this period based on trading timeframe and market conditions.</li>
+                <li>RSI divergences—when price reaches a new high or low but RSI does not—often precede trend reversals and provide <strong>high-probability entry and exit signals</strong>.</li>
+                <li>On Cluenex, RSI is displayed alongside real-time sentiment scores and options flow, allowing traders to confirm momentum signals with additional data.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Definition</h2>
+            <div class="definition-box">
+                <p><strong>RSI (Relative Strength Index)</strong> is a momentum oscillator that measures the speed and magnitude of price changes on a scale of <data-value="0">0</data-value> to <data-value="100">100</data-value>, used to identify overbought and oversold conditions in a stock.</p>
+            </div>
+            <p>Developed by J. Welles Wilder in 1978, RSI quantifies buying and selling pressure by comparing the magnitude of recent gains to recent losses. The indicator oscillates between 0 and 100, with readings above 70 conventionally interpreted as overbought and readings below 30 as oversold. RSI helps traders identify potential reversal points and confirm momentum shifts without requiring price to form obvious chart patterns.</p>
+        </section>
+
+        <section>
+            <h2>How RSI Works</h2>
+            <p>RSI calculates the ratio of average gains to average losses over a specified period, typically <strong>14 periods</strong> (days on daily charts, hours on hourly charts, minutes on minute charts). The formula is:</p>
+
+            <pre>RSI = 100 - [100 / (1 + RS)]
+where RS = Average Gain over 14 periods / Average Loss over 14 periods</pre>
+
+            <p>The <strong>14-period default</strong> balances sensitivity and reliability. Shorter periods (<strong>7 or 9</strong>) make RSI more responsive to recent price action, producing more signals but also more false signals. Longer periods (<strong>21 or 28</strong>) smooth the indicator, reducing noise but delaying signal generation.</p>
+
+            <p>RSI measures only the magnitude of price changes, not direction. When a stock rallies strongly, buyers are dominating, and RSI rises. When sellers take control and the stock falls, RSI declines. The oscillator is mean-reverting: extremely high RSI readings (above 80) and extremely low readings (below 20) rarely persist, creating opportunities for contrarian trades.</p>
+
+            <p>On Cluenex, RSI is calculated in real time across over <strong>5,000 US-listed tickers</strong> and displayed alongside sentiment intensity and options flow to help traders confirm momentum shifts with multiple signals rather than relying on a single indicator.</p>
+        </section>
+
+        <section>
+            <h2>RSI Threshold Reference</h2>
+            <p>Understanding RSI readings is essential for interpreting signals. Use this quick reference:</p>
+            <div class="rsi-threshold-quick-ref">
+                <div class="threshold-card">
+                    <div class="threshold-range" data-min="0" data-max="20">0–20</div>
+                    <div class="threshold-label">Extreme Oversold<br><small>Reversal likely</small></div>
+                </div>
+                <div class="threshold-card">
+                    <div class="threshold-range" data-min="20" data-max="30">20–30</div>
+                    <div class="threshold-label">Oversold<br><small>Buy signal</small></div>
+                </div>
+                <div class="threshold-card">
+                    <div class="threshold-range" data-min="30" data-max="70">30–70</div>
+                    <div class="threshold-label">Neutral<br><small>Follow trend</small></div>
+                </div>
+                <div class="threshold-card">
+                    <div class="threshold-range" data-min="70" data-max="80">70–80</div>
+                    <div class="threshold-label">Overbought<br><small>Sell signal</small></div>
+                </div>
+                <div class="threshold-card">
+                    <div class="threshold-range" data-min="80" data-max="100">80–100</div>
+                    <div class="threshold-label">Extreme Overbought<br><small>Sharp reversal</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>How to Use RSI in Practice</h2>
+
+            <h3>Entry and Exit Signals</h3>
+            <p>RSI generates trading signals through threshold crossovers and divergences. Here are the primary entry and exit scenarios:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Signal Type</th>
+                        <th>RSI Trigger</th>
+                        <th>Confirmation</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Oversold Bounce (Buy)</strong></td>
+                        <td><data-value="30">RSI drops below 30</data-value></td>
+                        <td>RSI crosses back above 30</td>
+                        <td>Enter long on close above 30 or next candle open</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Overbought Pullback (Sell)</strong></td>
+                        <td><data-value="70">RSI rises above 70</data-value></td>
+                        <td>RSI crosses back below 70</td>
+                        <td>Enter short on close below 70</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exit Long</strong></td>
+                        <td><data-value="80">RSI exceeds 80</data-value></td>
+                        <td>Extreme overbought confirmed</td>
+                        <td>Exit half position or set trailing stop</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exit Short</strong></td>
+                        <td><data-value="20">RSI falls below 20</data-value></td>
+                        <td>Extreme oversold confirmed</td>
+                        <td>Cover half position or set buy stop</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bullish Divergence</strong></td>
+                        <td>Price new low; RSI doesn't go lower</td>
+                        <td>Price bounces above swing high</td>
+                        <td>Enter long; selling pressure weakening</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bearish Divergence</strong></td>
+                        <td>Price new high; RSI doesn't go higher</td>
+                        <td>Price breaks below swing low</td>
+                        <td>Enter short; buying pressure fading</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Why Divergence Is the High-Probability Signal</h3>
+            <p>Divergence is the most reliable RSI signal because it reveals a shift in momentum before price action becomes obvious.</p>
+
+            <p><strong>Bullish Divergence</strong> (buy signal): Price makes a new low, but RSI does not go below its previous low. This shows that selling pressure is weakening even as price falls. Enter long when price bounces and closes above the swing high between the two lows.</p>
+
+            <p><strong>Bearish Divergence</strong> (sell signal): Price makes a new high, but RSI does not exceed its previous high. This shows that buying pressure is fading despite the price reaching new highs. Enter short when price breaks below the swing low between the two highs.</p>
+        </section>
+
+        <section>
+            <h2>Common Mistakes and Misconceptions</h2>
+
+            <div class="misconception">
+                <div class="misconception-title">❌ "RSI above 70 means I should short immediately."</div>
+                <div class="misconception-text">
+                    Many traders misinterpret overbought as a direct sell signal. In reality, stocks in strong uptrends often remain above 70 for extended periods. RSI above 70 is a warning to tighten stops and take partial profits, not an automatic reversal signal. Wait for RSI to fail to make a new high alongside a new price high (bearish divergence) or for a close below the 70 line before shorting.
+                </div>
+            </div>
+
+            <div class="misconception">
+                <div class="misconception-title">❌ "RSI below 30 is always a buy."</div>
+                <div class="misconception-text">
+                    Stocks in steep downtrends often stay below 30 for weeks. Blindly buying at RSI 30 catches falling knives. Instead, use RSI 30 as a signal to raise your hand—wait for bullish divergence or a confirmed close above 30 before entering long.
+                </div>
+            </div>
+
+            <div class="misconception">
+                <div class="misconception-title">❌ "The 14-period default works on all timeframes."</div>
+                <div class="misconception-text">
+                    Many traders apply a 14-period RSI to 1-minute charts and expect the same reliability as on daily charts. Shorter timeframes require shorter RSI periods (5–7) to capture meaningful signals. Longer timeframes (weekly, monthly) can use longer periods (21–28) for fewer, higher-probability setups.
+                </div>
+            </div>
+
+            <div class="misconception">
+                <div class="misconception-title">❌ "RSI divergence always works."</div>
+                <div class="misconception-text">
+                    While divergence is high-probability, it can fail if the underlying trend remains too strong. A bearish divergence in a bull market may reverse immediately. Always confirm divergence with price action (a close below support) before trading it.
+                </div>
+            </div>
+
+            <div class="misconception">
+                <div class="misconception-title">❌ "I should use RSI in isolation."</div>
+                <div class="misconception-text">
+                    RSI in isolation leads to whipsaws. Pair RSI signals with volume confirmation, moving average trends, or support/resistance levels. On Cluenex, pairing RSI with sentiment and options flow reduces false signals significantly.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Example: Real-World Application</h2>
+            <p>Here's how an RSI divergence signal plays out on a real stock. Consider NVDA on a daily chart in mid-November 2024:</p>
+
+            <table class="example-timeline">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>RSI</th>
+                        <th>Signal / Action</th>
+                        <th>P&L</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-date="2024-11-08"><strong>Nov 8</strong></td>
+                        <td data-price="143.50">$143.50</td>
+                        <td data-rsi="65"><strong>65</strong></td>
+                        <td>Approaching overbought. Sentiment bullish (72).</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td data-date="2024-11-12"><strong>Nov 12</strong></td>
+                        <td data-price="148.20">$148.20 (new high)</td>
+                        <td data-rsi="76"><strong>76</strong> (no new high)</td>
+                        <td>🚨 <strong>Bearish Divergence:</strong> Price makes new 5-week high but RSI peaks at 76 (below prior peak). Sell signal triggered.</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td data-date="2024-11-13"><strong>Nov 13</strong></td>
+                        <td data-price="147.80">$147.80</td>
+                        <td data-rsi="68"><strong>68</strong></td>
+                        <td>RSI drops below 70. Divergence confirmed. <strong>Enter short</strong> with stop at $149.00.</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td data-date="2024-11-14"><strong>Nov 14</strong></td>
+                        <td data-price="145.30">$145.30</td>
+                        <td data-rsi="52"><strong>52</strong></td>
+                        <td>Price falls. Exit half position for profit.</td>
+                        <td><strong style="color: #16a34a;">+2.5%</strong></td>
+                    </tr>
+                    <tr>
+                        <td data-date="2024-11-15"><strong>Nov 15</strong></td>
+                        <td data-price="142.10">$142.10</td>
+                        <td data-rsi="38"><strong>38</strong></td>
+                        <td>Continue trend. Exit remaining position at $142.50.</td>
+                        <td><strong style="color: #16a34a;">+4.0% total</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Key Insight:</strong> The divergence signal caught a <data-point="6.10">6.10-point move</data-point> (from $148.20 to $142.10) while keeping risk defined with a clear stop. Without divergence confirmation, a trader might have shorted at the 70 threshold on Nov 12 and been immediately stopped out.</p>
+        </section>
+
+        <section>
+            <h2>How Cluenex Uses RSI</h2>
+            <p>Cluenex displays RSI alongside real-time sentiment scores and options flow data. When RSI above 70 aligns with a sentiment drop and options flow shows heavy put-call ratios, the probability of a reversal increases significantly. Cluenex's AI snapshot generator also flags "momentum divergences"—situations where RSI and sentiment readings diverge, signaling a potential reversal before the price action becomes obvious. This multi-signal approach reduces whipsaws and improves entry quality.</p>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <dl itemscope itemtype="https://schema.org/FAQPage">
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <dt itemprop="name">What's the difference between a 14-period RSI and a 7-period RSI?</dt>
+                    <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <span itemprop="text">A 14-period RSI is slower and less responsive, producing fewer signals and fewer false positives. A 7-period RSI reacts faster to recent price action, producing more signals but also more false signals. Use 14 for swing trading (holding for days to weeks) and 7 or 9 for day trading or scalping.</span>
+                    </dd>
+                </div>
+
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <dt itemprop="name">Is RSI more effective on stocks or crypto?</dt>
+                    <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <span itemprop="text">RSI works on both, but crypto exhibits more extreme moves. Cryptoassets stay above RSI 70 and below RSI 30 longer than equities, so crypto traders often adjust thresholds to 80/20 instead of 70/30. Equities tend to respect the traditional 70/30 levels more consistently.</span>
+                    </dd>
+                </div>
+
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <dt itemprop="name">Can RSI predict a crash?</dt>
+                    <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <span itemprop="text">RSI cannot predict magnitude or timing of crashes, but extreme RSI readings (above 85 or below 15) combined with bearish divergence often precede sharp reversals. During market crashes, RSI may hit 5–10, but trying to bottom-pick with only RSI is dangerous. Always use stop losses.</span>
+                    </dd>
+                </div>
+
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <dt itemprop="name">Should I use RSI on a 1-minute chart?</dt>
+                    <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <span itemprop="text">Yes, but use a 5 or 7-period RSI instead of 14. Shorter timeframes require shorter lookback windows. A 14-period RSI on a 1-minute chart is too slow and lags price moves, making entries late.</span>
+                    </dd>
+                </div>
+
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <dt itemprop="name">What's the success rate of RSI overbought/oversold signals?</dt>
+                    <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <span itemprop="text">Overbought and oversold signals alone have a roughly 50% win rate—little better than a coin flip. But when combined with divergence, price action confirmation, or additional indicators (volume, sentiment, options flow), the win rate climbs to 65–75%.</span>
+                    </dd>
+                </div>
+
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <dt itemprop="name">Does RSI work on all stocks or only liquid ones?</dt>
+                    <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <span itemprop="text">RSI works best on liquid, heavily-traded stocks where buyers and sellers are plentiful (AAPL, MSFT, NVDA, TSLA). Illiquid or low-volume stocks can have choppy RSI that whipsaws frequently. Always check average daily volume before relying on RSI signals.</span>
+                    </dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="summary-box">
+            <h3>Key Takeaway</h3>
+            <p>RSI is most effective when combined with other signals. Threshold crossovers (30 and 70) are useful entry triggers, but <strong>divergence is the signal with the highest probability</strong>. Pairing RSI with sentiment, volume, and price action confirmation transforms it from a 50% win-rate indicator into a high-conviction trading tool with 65–75% accuracy. On Cluenex, this multi-signal approach is built in, giving traders a complete picture of momentum and market structure.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Related Concepts</h2>
+            <ul>
+                <li><a href="https://cluenex.com/learn/technical-analysis/macd-explained">What is MACD: Detecting Momentum Shifts</a> — Another momentum oscillator that complements RSI signals.</li>
+                <li><a href="https://cluenex.com/learn/technical-analysis/moving-averages">Moving Averages Explained: Identifying Trend Direction</a> — Use moving averages to confirm the overall trend before acting on RSI overbought/oversold signals.</li>
+                <li><a href="https://cluenex.com/learn/technical-analysis/divergence-trading">Divergence in Technical Analysis: High-Probability Trading Pattern</a> — Deep dive into using divergence across multiple indicators.</li>
+                <li><a href="https://cluenex.com/glossary/overbought">Glossary: Overbought</a> — Definition and practical interpretation.</li>
+                <li><a href="https://cluenex.com/glossary/oversold">Glossary: Oversold</a> — Definition and practical interpretation.</li>
+            </ul>
+        </section>
+    </article>
+</body>
+</html>

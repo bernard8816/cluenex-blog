@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cluenex — Learn Stock Market & Trading</title>
+    <meta name="description" content="Free, LLM-optimized education on technical analysis, trading signals, and stock market fundamentals.">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <style>
+        .hero {
+            padding: 80px 0 120px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: var(--ff-display);
+            font-size: clamp(2em, 5vw, 3.5em);
+            color: #f0ece3;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.15em;
+            color: #b5afa3;
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-lg {
+            padding: 12px 28px;
+            font-size: 0.95em;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .btn-primary-lg {
+            background: var(--gold);
+            color: var(--text-inv);
+        }
+        .btn-primary-lg:hover {
+            background: var(--gold-l);
+            transform: translateY(-2px);
+        }
+        .btn-secondary-lg {
+            background: var(--bg-card);
+            border: 1px solid var(--border-l);
+            color: var(--text-1);
+        }
+        .btn-secondary-lg:hover {
+            border-color: var(--gold);
+            color: var(--gold-l);
+        }
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin: 60px 0;
+        }
+        .post-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 24px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .post-card:hover {
+            border-color: var(--gold-border);
+            transform: translateY(-4px);
+        }
+        .post-tag {
+            font-size: 0.7em;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .post-title {
+            font-size: 1.15em;
+            color: var(--text-1);
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .post-desc {
+            font-size: 0.9em;
+            color: var(--text-2);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        .section-title {
+            font-family: var(--ff-display);
+            font-size: 2em;
+            color: #f0ece3;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- SITE NAV -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="/" class="site-logo">Cluenex</a>
+            <ul class="nav-links" role="list">
+                <li><a href="/learn" class="active">Learn</a></li>
+                <li><a href="#">Markets</a></li>
+                <li><a href="#">Screener</a></li>
+                <li><a href="#">Options Flow</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://cluenex.com/signup" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="wrap">
+        <div class="hero">
+            <h1>Learn Stock Market & Trading</h1>
+            <p>Free, LLM-optimized education on technical analysis, momentum indicators, and smart money signals.</p>
+            <div class="cta-buttons">
+                <a href="/learn/technical-analysis/rsi-explained/" class="btn-lg btn-primary-lg">Read Articles</a>
+                <a href="https://cluenex.com" class="btn-lg btn-secondary-lg">Visit Cluenex →</a>
+            </div>
+        </div>
+
+        <!-- FEATURED POSTS -->
+        <section>
+            <h2 class="section-title">Featured Learning</h2>
+            <div class="posts-grid">
+                <a href="/learn/technical-analysis/rsi-explained/" class="post-card">
+                    <div class="post-tag">Technical Analysis</div>
+                    <div class="post-title">What is RSI: How Traders Use Momentum to Time Entries and Exits</div>
+                    <div class="post-desc">RSI measures price momentum on a 0–100 scale. Learn how to identify overbought/oversold conditions and spot divergence signals.</div>
+                </a>
+
+                <a href="#" class="post-card" style="opacity: 0.5; cursor: default;">
+                    <div class="post-tag">Coming Soon</div>
+                    <div class="post-title">MACD Explained: Detecting Momentum Shifts</div>
+                    <div class="post-desc">Another momentum oscillator that complements RSI. Learn when to use MACD over RSI for trend-following strategies.</div>
+                </a>
+
+                <a href="#" class="post-card" style="opacity: 0.5; cursor: default;">
+                    <div class="post-tag">Coming Soon</div>
+                    <div class="post-title">Options Flow: Reading Smart Money Signals</div>
+                    <div class="post-desc">Understand what large options trades reveal about institutions' views. Confirm momentum shifts with multi-signal confirmation.</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- INFO -->
+        <section style="text-align: center; padding: 60px 0; border-top: 1px solid var(--border); margin-top: 80px;">
+            <p style="color: var(--text-2); font-size: 0.95em; line-height: 1.8;">
+                All content is optimized for LLM citation and created with the latest search engine standards in mind.<br>
+                Learn from educational articles written by traders, for traders.
+            </p>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>
+                © 2024 Cluenex ·
+                <a href="/learn">Learn</a> ·
+                <a href="https://cluenex.com">Home</a>
+            </span>
+            <span>For educational purposes only. Not financial advice.</span>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

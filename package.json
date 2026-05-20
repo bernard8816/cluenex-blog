@@ -1,0 +1,28 @@
+{
+  "name": "cluenex-blog",
+  "version": "1.0.0",
+  "description": "Cluenex educational blog platform - LLM-optimized, fast-publish content system",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "watch": "eleventy --watch",
+    "dev": "eleventy --serve --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it": "^13.0.2",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-anchor": "^8.6.7"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "blog",
+    "eleventy",
+    "static-site-generator",
+    "markdown",
+    "cluenex"
+  ],
+  "author": "Cluenex",
+  "license": "MIT"
+}

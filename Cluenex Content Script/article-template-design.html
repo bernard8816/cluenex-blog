@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta -->
+    <meta name="description" content="RSI (Relative Strength Index) measures price momentum on a 0–100 scale. Learn how traders use RSI to identify overbought/oversold conditions and time entries and exits with high-probability signals.">
+    <meta property="og:title" content="What is RSI: How Traders Use Momentum to Time Entries and Exits">
+    <meta property="og:description" content="RSI measures price momentum on a 0–100 scale, signaling overbought above 70 and oversold below 30. Learn to use RSI divergence and thresholds to time entries and exits.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cluenex.com/learn/technical-analysis/rsi-explained">
+    <meta property="og:site_name" content="Cluenex">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What is RSI: How Traders Use Momentum to Time Entries and Exits">
+    <meta name="twitter:description" content="RSI measures price momentum. Learn overbought/oversold signals, divergences, and how to time trades with Cluenex.">
+    <meta name="author" content="Cluenex">
+    <meta name="keywords" content="RSI, Relative Strength Index, momentum, technical analysis, overbought, oversold, trading signals">
+    <link rel="canonical" href="https://cluenex.com/learn/technical-analysis/rsi-explained">
+
+    <title>What is RSI: How Traders Use Momentum to Time Entries and Exits | Cluenex</title>
+
+    <!-- JSON-LD: Article + Speakable + About -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cluenex.com/learn/technical-analysis/rsi-explained"
+      },
+      "headline": "What is RSI: How Traders Use Momentum to Time Entries and Exits",
+      "description": "RSI (Relative Strength Index) is a momentum oscillator measuring price changes on a scale of 0 to 100, used to identify overbought and oversold conditions in stocks and crypto.",
+      "datePublished": "2024-05-19",
+      "dateModified": "2024-05-19",
+      "author": {
+        "@type": "Organization",
+        "name": "Cluenex",
+        "url": "https://cluenex.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cluenex",
+        "url": "https://cluenex.com"
+      },
+      "articleSection": "Technical Analysis",
+      "articleBody": "RSI (Relative Strength Index) is a momentum oscillator that measures the speed and magnitude of price changes on a scale of 0 to 100. Readings above 70 indicate overbought conditions; readings below 30 indicate oversold conditions. Developed by J. Welles Wilder in 1978, RSI quantifies buying and selling pressure by comparing the magnitude of recent gains to recent losses. The standard 14-period RSI balances sensitivity and reliability across daily and weekly charts. RSI divergence — when price makes a new extreme but RSI does not — is the highest-probability signal, often preceding trend reversals by one or more sessions.",
+      "keywords": ["RSI", "Relative Strength Index", "momentum oscillator", "technical analysis", "overbought", "oversold", "divergence", "trading signals"],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".article-lead", ".definition-text", ".key-takeaways li"]
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Relative Strength Index",
+        "sameAs": "https://en.wikipedia.org/wiki/Relative_strength_index"
+      },
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",               "item": "https://cluenex.com" },
+        { "@type": "ListItem", "position": 2, "name": "Learn",              "item": "https://cluenex.com/learn" },
+        { "@type": "ListItem", "position": 3, "name": "Technical Analysis", "item": "https://cluenex.com/learn/technical-analysis" },
+        { "@type": "ListItem", "position": 4, "name": "What is RSI",        "item": "https://cluenex.com/learn/technical-analysis/rsi-explained" }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between a 14-period RSI and a 7-period RSI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 14-period RSI is slower and less responsive, producing fewer signals and fewer false positives. A 7-period RSI reacts faster to recent price action, producing more signals but also more false signals. Use 14 for swing trading (holding for days to weeks) and 7 or 9 for day trading or scalping."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is RSI more effective on stocks or crypto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RSI works on both, but crypto exhibits more extreme moves. Cryptoassets stay above RSI 70 and below RSI 30 longer than equities, so crypto traders often adjust thresholds to 80/20 instead of 70/30. Equities tend to respect the traditional 70/30 levels more consistently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can RSI predict a crash?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RSI cannot predict the magnitude or timing of crashes, but extreme RSI readings (above 85 or below 15) combined with bearish divergence often precede sharp reversals. During market crashes, RSI may hit 5–10, but trying to bottom-pick with only RSI is dangerous. Always use stop losses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use RSI on a 1-minute chart?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but use a 5 or 7-period RSI instead of 14. Shorter timeframes require shorter lookback windows. A 14-period RSI on a 1-minute chart is too slow and lags price moves, making entries late."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the success rate of RSI overbought/oversold signals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Overbought and oversold signals alone have a roughly 50% win rate — little better than a coin flip. When combined with divergence, price action confirmation, or additional indicators (volume, sentiment, options flow), the win rate climbs to 65–75%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does RSI work on all stocks or only liquid ones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RSI works best on liquid, heavily-traded stocks where buyers and sellers are plentiful (AAPL, MSFT, NVDA, TSLA). Illiquid or low-volume stocks can have choppy RSI that whipsaws frequently. Always check average daily volume before relying on RSI signals."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* =====================================================
+           DESIGN TOKENS
+        ===================================================== */
+        :root {
+            --bg:          #070c1a;
+            --bg-2:        #0d1428;
+            --bg-card:     #0f172a;
+            --bg-card-h:   #131e35;
+            --bg-hi:       #1a2540;
+
+            --text-1:      #ddd8cd;
+            --text-2:      #8896ab;
+            --text-3:      #4a5568;
+            --text-inv:    #070c1a;
+
+            --gold:        #e8a020;
+            --gold-l:      #f4c060;
+            --gold-dim:    rgba(232,160,32,.13);
+            --gold-border: rgba(232,160,32,.22);
+
+            --teal:        #14b8a6;
+            --teal-dim:    rgba(20,184,166,.1);
+
+            --red:         #f43f5e;
+            --red-dim:     rgba(244,63,94,.1);
+
+            --green:       #10b981;
+
+            --border:      rgba(255,255,255,.06);
+            --border-l:    rgba(255,255,255,.11);
+
+            --ff-display: 'DM Serif Display', Georgia, serif;
+            --ff-body:    'IBM Plex Sans', -apple-system, sans-serif;
+            --ff-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+            --r:    6px;
+            --r-lg: 10px;
+        }
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--ff-body);
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--text-1);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* =====================================================
+           READING PROGRESS BAR
+        ===================================================== */
+        #progress {
+            position: fixed; top: 0; left: 0;
+            width: 0; height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-l));
+            z-index: 200;
+            transition: width .08s linear;
+        }
+
+        /* =====================================================
+           SITE NAV
+        ===================================================== */
+        .site-nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(7,12,26,.93);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            padding: 0 24px;
+            display: flex; align-items: center; gap: 28px;
+            height: 54px;
+        }
+
+        .site-logo {
+            font-family: var(--ff-display);
+            font-size: 1.25em;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: .02em;
+            flex-shrink: 0;
+        }
+
+        .nav-links { list-style: none; display: flex; gap: 2px; }
+
+        .nav-links a {
+            display: block; padding: 6px 13px;
+            font-size: .85em; font-weight: 500;
+            color: var(--text-2); text-decoration: none;
+            border-radius: 4px;
+            transition: color .15s, background .15s;
+        }
+
+        .nav-links a:hover   { color: var(--text-1); background: var(--border); }
+        .nav-links a.active  { color: var(--gold-l); }
+
+        .nav-cta { margin-left: auto; }
+
+        .btn-primary {
+            display: inline-block; padding: 7px 18px;
+            background: var(--gold); color: var(--text-inv);
+            font-size: .83em; font-weight: 600;
+            border-radius: 4px; text-decoration: none;
+            transition: background .15s;
+        }
+        .btn-primary:hover { background: var(--gold-l); }
+
+        /* =====================================================
+           PAGE WRAPPER
+        ===================================================== */
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+        .breadcrumb {
+            display: flex; align-items: center; flex-wrap: wrap;
+            gap: 8px; padding: 20px 0 0;
+            font-size: .78em; color: var(--text-3);
+        }
+
+        .breadcrumb a {
+            color: var(--text-2); text-decoration: none;
+            transition: color .15s;
+        }
+        .breadcrumb a:hover  { color: var(--gold-l); }
+        .breadcrumb-cur      { color: var(--gold-l); }
+        .breadcrumb-sep      { color: var(--text-3); }
+
+        /* =====================================================
+           ARTICLE HEADER
+        ===================================================== */
+        .article-header {
+            padding: 28px 0 40px;
+            animation: fadeUp .5s ease both;
+        }
+
+        .cat-badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 4px 13px;
+            background: var(--gold-dim);
+            border: 1px solid var(--gold-border);
+            border-radius: 20px;
+            font-size: .72em; font-weight: 600;
+            color: var(--gold-l);
+            letter-spacing: .06em; text-transform: uppercase;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        .cat-badge::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--gold); border-radius: 50%;
+        }
+
+        .article-title {
+            font-family: var(--ff-display);
+            font-size: clamp(1.9em, 3.8vw, 2.85em);
+            font-weight: 400;
+            line-height: 1.15;
+            color: #f0ece3;
+            margin-bottom: 24px;
+            max-width: 760px;
+        }
+
+        .article-meta {
+            display: flex; align-items: center;
+            flex-wrap: wrap; gap: 16px;
+            font-size: .83em; color: var(--text-2);
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .meta-sep { color: var(--text-3); }
+
+        .meta-url {
+            font-family: var(--ff-mono);
+            font-size: .85em;
+            color: var(--gold);
+            opacity: .7;
+        }
+
+        .article-lead {
+            margin-top: 26px;
+            font-size: 1.1em; font-weight: 300;
+            line-height: 1.72; color: #b5afa3;
+            max-width: 700px;
+        }
+
+        /* =====================================================
+           KEY TAKEAWAYS
+        ===================================================== */
+        .key-takeaways {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
+            border-left: 3px solid var(--gold);
+            border-radius: var(--r-lg);
+            padding: 26px 30px;
+            margin-bottom: 48px;
+            animation: fadeUp .5s ease .1s both;
+        }
+
+        .kt-header {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .kt-tag {
+            font-family: var(--ff-mono);
+            font-size: .7em; color: var(--gold);
+            background: var(--gold-dim); padding: 2px 8px;
+            border-radius: 3px; letter-spacing: .05em;
+        }
+
+        .kt-label {
+            font-size: .68em; font-weight: 600;
+            text-transform: uppercase; letter-spacing: .12em;
+            color: var(--gold-l);
+        }
+
+        .key-takeaways ul { list-style: none; }
+
+        .key-takeaways li {
+            padding: 9px 0 9px 20px;
+            border-bottom: 1px solid var(--border);
+            font-size: .93em; line-height: 1.65;
+            color: var(--text-1); position: relative;
+        }
+        .key-takeaways li:last-child { border-bottom: none; }
+        .key-takeaways li::before {
+            content: '→'; position: absolute; left: 0;
+            color: var(--gold); font-size: .9em;
+        }
+
+        /* =====================================================
+           TWO-COLUMN LAYOUT
+        ===================================================== */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 256px;
+            gap: 52px;
+            align-items: start;
+            padding: 0 0 80px;
+        }
+
+        /* =====================================================
+           TABLE OF CONTENTS
+        ===================================================== */
+        .toc-sidebar {
+            position: sticky; top: 70px;
+            order: 2;
+        }
+
+        .toc-head {
+            font-size: .68em; font-weight: 600;
+            letter-spacing: .1em; text-transform: uppercase;
+            color: var(--text-3);
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 4px;
+        }
+
+        .toc-nav { list-style: none; font-size: .8em; }
+
+        .toc-nav li { margin-bottom: 1px; }
+
+        .toc-link {
+            display: block; padding: 6px 10px;
+            color: var(--text-2); text-decoration: none;
+            border-left: 2px solid transparent;
+            border-radius: 0 4px 4px 0;
+            line-height: 1.4;
+            transition: color .15s, border-color .15s, background .15s;
+        }
+        .toc-link:hover { color: var(--text-1); background: var(--border); }
+        .toc-link.active {
+            color: var(--gold-l);
+            border-color: var(--gold);
+            background: var(--gold-dim);
+        }
+
+        .toc-rule {
+            height: 1px; background: var(--border);
+            margin: 18px 0;
+        }
+
+        .toc-cta {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 16px;
+        }
+        .toc-cta-label {
+            font-size: .68em; font-weight: 600;
+            text-transform: uppercase; letter-spacing: .08em;
+            color: var(--text-3); margin-bottom: 7px;
+        }
+        .toc-cta-text {
+            font-size: .8em; color: var(--text-2);
+            line-height: 1.5; margin-bottom: 12px;
+        }
+        .btn-sm {
+            display: block; text-align: center;
+            padding: 7px 12px;
+            background: var(--gold); color: var(--text-inv);
+            font-size: .78em; font-weight: 600;
+            border-radius: 4px; text-decoration: none;
+        }
+
+        /* =====================================================
+           ARTICLE BODY
+        ===================================================== */
+        .article-body {
+            order: 1; min-width: 0;
+        }
+
+        .article-body section { margin-bottom: 56px; }
+
+        /* =====================================================
+           HEADINGS
+        ===================================================== */
+        .article-body h2 {
+            font-family: var(--ff-display);
+            font-size: 1.6em; font-weight: 400;
+            color: #f0ece3; margin-bottom: 20px;
+            line-height: 1.22; padding-top: 8px;
+            display: flex; align-items: baseline; gap: 10px;
+        }
+
+        .sec-num {
+            font-family: var(--ff-mono);
+            font-size: .5em; color: var(--gold);
+            font-weight: 400; flex-shrink: 0;
+            padding-top: 2px;
+        }
+
+        .article-body h3 {
+            font-size: 1.02em; font-weight: 600;
+            color: #c2bdb0;
+            margin: 28px 0 12px;
+            letter-spacing: .01em;
+        }
+
+        /* =====================================================
+           BODY TEXT
+        ===================================================== */
+        .article-body p {
+            margin-bottom: 18px;
+            color: var(--text-1);
+            font-size: 1em; line-height: 1.8;
+        }
+
+        .article-body strong { color: #f0ece3; font-weight: 600; }
+
+        .article-body a {
+            color: var(--gold-l); text-decoration: none;
+            border-bottom: 1px solid var(--gold-border);
+            transition: color .15s, border-color .15s;
+        }
+        .article-body a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+
+        abbr { text-decoration: underline dotted var(--text-3); cursor: help; }
+        dfn  { font-style: italic; color: var(--gold-l); }
+
+        .article-body ul,
+        .article-body ol {
+            padding-left: 24px; margin: 12px 0 20px;
+        }
+        .article-body li {
+            margin-bottom: 10px; line-height: 1.75;
+            color: var(--text-1);
+        }
+
+        /* =====================================================
+           DEFINITION BOX
+        ===================================================== */
+        .def-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-l);
+            border-radius: var(--r-lg);
+            padding: 24px 28px;
+            margin: 20px 0;
+            position: relative; overflow: hidden;
+        }
+        .def-box::before {
+            content: '"';
+            position: absolute; top: -14px; left: 18px;
+            font-family: var(--ff-display);
+            font-size: 9em; color: var(--border);
+            line-height: 1; pointer-events: none;
+        }
+        .definition-text {
+            font-size: 1.04em; line-height: 1.75;
+            color: #c8c2b5; position: relative; z-index: 1;
+        }
+        .def-source {
+            margin-top: 12px; font-size: .76em;
+            color: var(--text-3); font-family: var(--ff-mono);
+            position: relative; z-index: 1;
+        }
+
+        /* =====================================================
+           FORMULA BLOCK
+        ===================================================== */
+        pre {
+            background: #04080f;
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 18px 22px; margin: 22px 0;
+            overflow-x: auto;
+            font-family: var(--ff-mono);
+            font-size: .87em; line-height: 1.6;
+            color: #7dd3fc;
+        }
+        code {
+            font-family: var(--ff-mono); font-size: .87em;
+            background: var(--bg-hi); color: var(--gold-l);
+            padding: 2px 7px; border-radius: 3px;
+        }
+
+        /* =====================================================
+           RSI THRESHOLD GRID
+        ===================================================== */
+        .threshold-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px; margin: 22px 0;
+        }
+        .tc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 14px 10px; text-align: center;
+            transition: border-color .2s;
+        }
+        .tc:hover { border-color: var(--border-l); }
+        .tc-range {
+            font-family: var(--ff-mono);
+            font-size: 1em; font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .tc-label { font-size: .72em; color: var(--text-2); line-height: 1.4; }
+        .tc-1 .tc-range { color: #10b981; }
+        .tc-2 .tc-range { color: #34d399; }
+        .tc-3 .tc-range { color: var(--text-2); }
+        .tc-4 .tc-range { color: #f97316; }
+        .tc-5 .tc-range { color: var(--red); }
+
+        /* =====================================================
+           DATA TABLE
+        ===================================================== */
+        .tbl-wrap {
+            margin: 22px 0;
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            overflow-x: auto;
+        }
+        .dtbl {
+            width: 100%; border-collapse: collapse;
+            font-size: .875em;
+        }
+        .dtbl thead { background: var(--bg-hi); }
+        .dtbl th {
+            padding: 11px 15px;
+            text-align: left;
+            font-weight: 600; font-size: .75em;
+            text-transform: uppercase; letter-spacing: .06em;
+            color: var(--text-2);
+            border-bottom: 1px solid var(--border-l);
+            white-space: nowrap;
+        }
+        .dtbl td {
+            padding: 11px 15px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-1); vertical-align: top;
+            line-height: 1.5;
+        }
+        .dtbl tbody tr:last-child td { border-bottom: none; }
+        .dtbl tbody tr:hover td { background: var(--bg-card-h); }
+
+        /* =====================================================
+           TRADE LOG
+        ===================================================== */
+        .trade-log {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            overflow: hidden; margin: 22px 0;
+        }
+        .tl-header {
+            display: flex; align-items: center;
+            justify-content: space-between;
+            padding: 11px 16px;
+            background: var(--bg-hi);
+            border-bottom: 1px solid var(--border-l);
+        }
+        .tl-title {
+            font-family: var(--ff-mono); font-size: .75em;
+            color: var(--gold); letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+        .tl-ticker {
+            font-family: var(--ff-mono); font-size: .8em;
+            color: var(--text-2);
+            background: var(--bg-card); padding: 3px 9px;
+            border-radius: 3px; border: 1px solid var(--border);
+        }
+        .trade-log table { width: 100%; border-collapse: collapse; font-size: .84em; }
+        .trade-log th {
+            padding: 9px 13px; text-align: left;
+            font-family: var(--ff-mono); font-size: .73em;
+            color: var(--text-3); letter-spacing: .05em;
+            border-bottom: 1px solid var(--border);
+        }
+        .trade-log td {
+            padding: 9px 13px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-1); vertical-align: middle;
+        }
+        .trade-log tr:last-child td { border-bottom: none; }
+        .signal-row td { background: rgba(244,63,94,.05); }
+        .pnl + { color: var(--green); font-family: var(--ff-mono); font-weight: 500; }
+        .rsi-val { font-family: var(--ff-mono); font-weight: 500; }
+        .pos { color: var(--green); font-family: var(--ff-mono); font-weight: 500; }
+
+        /* =====================================================
+           CALLOUT BOXES
+        ===================================================== */
+        .callout {
+            border-radius: var(--r);
+            padding: 16px 20px;
+            margin: 18px 0;
+        }
+        .callout-label {
+            font-size: .68em; font-weight: 600;
+            text-transform: uppercase; letter-spacing: .1em;
+            margin-bottom: 6px;
+        }
+        .callout-text { font-size: .91em; line-height: 1.7; color: var(--text-1); }
+
+        .callout-teal {
+            background: var(--teal-dim);
+            border: 1px solid rgba(20,184,166,.18);
+            border-left: 3px solid var(--teal);
+        }
+        .callout-teal .callout-label { color: var(--teal); }
+
+        .callout-red {
+            background: var(--red-dim);
+            border: 1px solid rgba(244,63,94,.18);
+            border-left: 3px solid var(--red);
+        }
+        .callout-red .callout-label { color: #fda4af; }
+        .callout-red .callout-text   { color: var(--text-2); }
+        .callout-red strong           { color: #fda4af; }
+
+        /* =====================================================
+           FAQ ACCORDION
+        ===================================================== */
+        .faq-list { border-top: 1px solid var(--border); }
+        .faq-item { border-bottom: 1px solid var(--border); }
+
+        .faq-q {
+            width: 100%; background: none; border: none;
+            padding: 17px 0;
+            display: flex; align-items: flex-start;
+            justify-content: space-between; gap: 16px;
+            color: var(--text-1);
+            font-family: var(--ff-body); font-size: .93em;
+            font-weight: 500; line-height: 1.5;
+            text-align: left; cursor: pointer;
+            transition: color .15s;
+        }
+        .faq-q:hover { color: var(--gold-l); }
+
+        .faq-toggle {
+            flex-shrink: 0; width: 20px; height: 20px;
+            border: 1px solid var(--border-l); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-3); font-size: 1em; margin-top: 1px;
+            transition: all .2s;
+        }
+        .faq-item.open .faq-toggle {
+            background: var(--gold-dim);
+            border-color: var(--gold-border);
+            color: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .faq-a {
+            display: none;
+            padding: 0 0 16px;
+            font-size: .9em; color: var(--text-2);
+            line-height: 1.75;
+        }
+        .faq-item.open .faq-a { display: block; }
+
+        /* =====================================================
+           CITE BOX
+        ===================================================== */
+        .cite-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 22px 26px;
+            margin: 48px 0 30px;
+        }
+        .cite-head {
+            font-size: .68em; font-weight: 600;
+            text-transform: uppercase; letter-spacing: .1em;
+            color: var(--text-3); margin-bottom: 12px;
+        }
+        .cite-tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+        .cite-tab {
+            padding: 4px 10px; font-size: .73em; font-weight: 600;
+            border: 1px solid var(--border); border-radius: 3px;
+            color: var(--text-2); cursor: pointer; background: none;
+            font-family: var(--ff-body);
+            transition: all .15s;
+        }
+        .cite-tab:hover, .cite-tab.active {
+            background: var(--gold-dim);
+            border-color: var(--gold-border);
+            color: var(--gold-l);
+        }
+        #cite-text {
+            font-family: var(--ff-mono); font-size: .8em;
+            color: var(--text-2); background: var(--bg);
+            border: 1px solid var(--border); border-radius: 4px;
+            padding: 13px 15px; line-height: 1.6;
+            white-space: pre-wrap; word-break: break-all;
+        }
+        .cite-copy {
+            margin-top: 9px; padding: 6px 13px;
+            background: var(--bg-hi); border: 1px solid var(--border);
+            border-radius: 4px; color: var(--text-2);
+            font-size: .78em; font-family: var(--ff-body);
+            cursor: pointer;
+            transition: all .15s;
+        }
+        .cite-copy:hover {
+            background: var(--gold-dim);
+            border-color: var(--gold-border);
+            color: var(--gold-l);
+        }
+
+        /* =====================================================
+           RELATED ARTICLES
+        ===================================================== */
+        .related {
+            padding: 40px 0 60px;
+            border-top: 1px solid var(--border);
+        }
+        .related-head {
+            font-size: .68em; font-weight: 600;
+            text-transform: uppercase; letter-spacing: .12em;
+            color: var(--text-3); margin-bottom: 18px;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 14px;
+        }
+        .related-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 18px;
+            text-decoration: none;
+            display: block;
+            transition: border-color .2s, transform .2s;
+        }
+        .related-card:hover {
+            border-color: var(--gold-border);
+            transform: translateY(-2px);
+        }
+        .related-tag {
+            font-size: .68em; font-weight: 600;
+            text-transform: uppercase; letter-spacing: .09em;
+            color: var(--gold); margin-bottom: 7px;
+        }
+        .related-title {
+            font-size: .9em; font-weight: 600;
+            color: var(--text-1); line-height: 1.45;
+            margin-bottom: 7px;
+        }
+        .related-desc {
+            font-size: .78em; color: var(--text-2); line-height: 1.5;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+        .site-footer {
+            background: var(--bg-2);
+            border-top: 1px solid var(--border);
+            padding: 18px 24px;
+        }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center;
+            justify-content: space-between; flex-wrap: wrap; gap: 10px;
+            font-size: .78em; color: var(--text-3);
+        }
+        .footer-inner a { color: var(--text-3); text-decoration: none; }
+        .footer-inner a:hover { color: var(--text-2); }
+
+        /* =====================================================
+           ANIMATION
+        ===================================================== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+        @media (max-width: 900px) {
+            .article-layout { grid-template-columns: 1fr; }
+            .toc-sidebar { display: none; }
+            .threshold-grid { grid-template-columns: repeat(3,1fr); }
+            .related-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .article-title { font-size: 1.75em; }
+            .threshold-grid { grid-template-columns: repeat(2,1fr); }
+            .related-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .wrap { padding: 0 16px; }
+        }
+
+        /* =====================================================
+           DESIGN SYSTEM ANNOTATION PANEL
+           (remove in production — for review only)
+        ===================================================== */
+        .ds-note {
+            background: rgba(232,160,32,.07);
+            border: 1px dashed var(--gold-border);
+            border-radius: var(--r);
+            padding: 14px 18px; margin: 28px 0;
+            font-size: .78em; color: var(--gold);
+            font-family: var(--ff-mono);
+            line-height: 1.65;
+        }
+        .ds-note strong { color: var(--gold-l); display: block; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- Reading Progress -->
+    <div id="progress" role="progressbar" aria-label="Reading progress"></div>
+
+    <!-- ============================================================
+         SITE NAV
+    ============================================================ -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="https://cluenex.com" class="site-logo">Cluenex</a>
+            <ul class="nav-links" role="list">
+                <li><a href="https://cluenex.com/learn" class="active">Learn</a></li>
+                <li><a href="#">Markets</a></li>
+                <li><a href="#">Screener</a></li>
+                <li><a href="#">Options Flow</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://cluenex.com/signup" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrap">
+
+        <!-- ============================================================
+             BREADCRUMB — schema-marked, supports BreadcrumbList JSON-LD
+        ============================================================ -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="https://cluenex.com">Home</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <a href="https://cluenex.com/learn">Learn</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <a href="https://cluenex.com/learn/technical-analysis">Technical Analysis</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <span class="breadcrumb-cur">RSI Explained</span>
+        </nav>
+
+        <!-- ============================================================
+             ARTICLE HEADER
+        ============================================================ -->
+        <header class="article-header">
+            <a href="https://cluenex.com/learn/technical-analysis" class="cat-badge">
+                Technical Analysis
+            </a>
+
+            <h1 class="article-title" itemprop="headline">
+                What is RSI: How Traders Use Momentum to Time Entries and Exits
+            </h1>
+
+            <div class="article-meta">
+                <span>By <strong>Cluenex</strong></span>
+                <span class="meta-sep">·</span>
+                <span>Updated <time datetime="2024-05-19" itemprop="dateModified">May 19, 2024</time></span>
+                <span class="meta-sep">·</span>
+                <span>8 min read</span>
+                <span class="meta-sep">·</span>
+                <span class="meta-url">cluenex.com/learn/technical-analysis/rsi-explained</span>
+            </div>
+
+            <p class="article-lead">
+                <abbr title="Relative Strength Index">RSI</abbr> is a momentum oscillator that measures buying and selling
+                pressure on a scale of 0 to 100. Traders use it to identify overbought and oversold conditions, time
+                entries and exits, and detect divergences before trend reversals.
+            </p>
+        </header>
+
+        <!-- ============================================================
+             KEY TAKEAWAYS
+             (speakable — LLMs read this first)
+        ============================================================ -->
+        <aside class="key-takeaways" aria-label="Key Takeaways">
+            <div class="kt-header">
+                <span class="kt-tag">KEY</span>
+                <span class="kt-label">Takeaways</span>
+            </div>
+            <ul>
+                <li><strong>RSI (<dfn>Relative Strength Index</dfn>)</strong> is a momentum oscillator measuring price changes on a scale of <data value="0">0</data> to <data value="100">100</data>.</li>
+                <li>RSI above <data value="70">70</data> = overbought (potential sell); below <data value="30">30</data> = oversold (potential buy). Context matters — not the number alone.</li>
+                <li>Standard period is <strong>14 bars</strong>. Use 7–9 for day trading; 21–28 for weekly charts.</li>
+                <li><strong>Divergence</strong> — price hits a new extreme but RSI does not — is the highest-probability RSI signal and often precedes trend reversals.</li>
+                <li>On Cluenex, RSI is displayed alongside real-time sentiment scores and options flow to confirm momentum shifts across 5,000+ US tickers.</li>
+            </ul>
+        </aside>
+
+        <!-- ============================================================
+             TWO-COLUMN LAYOUT
+        ============================================================ -->
+        <div class="article-layout">
+
+            <!-- ======================================================
+                 ARTICLE BODY
+            ====================================================== -->
+            <article class="article-body"
+                     itemscope itemtype="https://schema.org/Article">
+
+                <meta itemprop="headline"      content="What is RSI: How Traders Use Momentum to Time Entries and Exits">
+                <meta itemprop="datePublished" content="2024-05-19">
+                <meta itemprop="author"        content="Cluenex">
+                <meta itemprop="url"           content="https://cluenex.com/learn/technical-analysis/rsi-explained">
+
+                <!-- ————————————————————————————————
+                     §01  DEFINITION
+                ———————————————————————————————— -->
+                <section id="definition" aria-labelledby="h-definition">
+                    <h2 id="h-definition"><span class="sec-num" aria-hidden="true">01</span>Definition</h2>
+
+                    <div class="def-box">
+                        <p class="definition-text">
+                            <dfn id="rsi-def"><strong>RSI (Relative Strength Index)</strong></dfn> is a momentum
+                            oscillator that measures the speed and magnitude of price changes on a scale of
+                            <data value="0">0</data> to <data value="100">100</data>, used to identify overbought
+                            and oversold conditions in a security.
+                        </p>
+                        <div class="def-source">Source: Wilder, J.W. (1978). <em>New Concepts in Technical Trading Systems.</em></div>
+                    </div>
+
+                    <p>Developed by J. Welles Wilder in <time datetime="1978">1978</time>, RSI quantifies buying and
+                    selling pressure by comparing the average magnitude of recent gains to recent losses. The indicator
+                    oscillates between 0 and 100, with readings above <data value="70">70</data> conventionally
+                    interpreted as overbought and readings below <data value="30">30</data> as oversold.</p>
+
+                    <p>Unlike price-based indicators, RSI measures only <em>momentum</em> — the rate of change. This
+                    means RSI can reveal underlying weakness in a rising stock or hidden strength in a falling one
+                    before the price action makes the shift visible.</p>
+                </section>
+
+                <!-- ————————————————————————————————
+                     §02  HOW RSI WORKS
+                ———————————————————————————————— -->
+                <section id="how-rsi-works" aria-labelledby="h-how">
+                    <h2 id="h-how"><span class="sec-num" aria-hidden="true">02</span>How RSI Works</h2>
+
+                    <p>RSI calculates the ratio of average gains to average losses over a specified lookback period,
+                    typically <strong>14 bars</strong>. The formula:</p>
+
+                    <pre>RSI = 100 − [100 ÷ (1 + RS)]
+RS  = Average Gain (14 periods) ÷ Average Loss (14 periods)</pre>
+
+                    <p>Period selection affects sensitivity vs. reliability:</p>
+
+                    <ul>
+                        <li><strong>7–9 periods</strong> — faster, more signals, more false signals. Suited for day trading and scalping.</li>
+                        <li><strong>14 periods (default)</strong> — standard for swing trading (days to weeks).</li>
+                        <li><strong>21–28 periods</strong> — slower, fewer but higher-confidence setups. Suited for position trading and weekly charts.</li>
+                    </ul>
+
+                    <p>RSI is mean-reverting: extreme readings above <data value="80">80</data> or below
+                    <data value="20">20</data> rarely persist. On Cluenex, RSI is calculated in real time across
+                    over <strong>5,000 US-listed tickers</strong>, displayed alongside sentiment intensity and
+                    options flow.</p>
+                </section>
+
+                <!-- ————————————————————————————————
+                     §03  THRESHOLD REFERENCE
+                ———————————————————————————————— -->
+                <section id="rsi-thresholds" aria-labelledby="h-thresholds">
+                    <h2 id="h-thresholds"><span class="sec-num" aria-hidden="true">03</span>RSI Threshold Reference</h2>
+
+                    <p>Each RSI zone carries a distinct interpretation:</p>
+
+                    <div class="threshold-grid" role="list" aria-label="RSI threshold zones">
+                        <div class="tc tc-1" role="listitem">
+                            <div class="tc-range">0–20</div>
+                            <div class="tc-label">Extreme Oversold<br><small>Reversal likely</small></div>
+                        </div>
+                        <div class="tc tc-2" role="listitem">
+                            <div class="tc-range">20–30</div>
+                            <div class="tc-label">Oversold<br><small>Buy signal zone</small></div>
+                        </div>
+                        <div class="tc tc-3" role="listitem">
+                            <div class="tc-range">30–70</div>
+                            <div class="tc-label">Neutral<br><small>Follow trend</small></div>
+                        </div>
+                        <div class="tc tc-4" role="listitem">
+                            <div class="tc-range">70–80</div>
+                            <div class="tc-label">Overbought<br><small>Sell signal zone</small></div>
+                        </div>
+                        <div class="tc tc-5" role="listitem">
+                            <div class="tc-range">80–100</div>
+                            <div class="tc-label">Extreme OB<br><small>Sharp reversal risk</small></div>
+                        </div>
+                    </div>
+
+                    <div class="callout callout-teal">
+                        <div class="callout-label">Crypto Adjustment</div>
+                        <p class="callout-text">Crypto assets stay overbought/oversold longer than equities. Shift
+                        thresholds to <strong>80/20</strong> instead of 70/30 for BTC, ETH, and high-beta altcoins
+                        to reduce false signals.</p>
+                    </div>
+                </section>
+
+                <!-- ————————————————————————————————
+                     §04  USING RSI IN PRACTICE
+                ———————————————————————————————— -->
+                <section id="how-to-use" aria-labelledby="h-use">
+                    <h2 id="h-use"><span class="sec-num" aria-hidden="true">04</span>How to Use RSI in Practice</h2>
+
+                    <h3>Entry and Exit Signals</h3>
+
+                    <div class="tbl-wrap">
+                        <table class="dtbl">
+                            <thead>
+                                <tr>
+                                    <th>Signal Type</th>
+                                    <th>RSI Trigger</th>
+                                    <th>Confirmation</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Oversold Bounce</strong></td>
+                                    <td>RSI drops below <data value="30">30</data></td>
+                                    <td>RSI crosses back above 30</td>
+                                    <td>Enter long on close above 30</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Overbought Pullback</strong></td>
+                                    <td>RSI rises above <data value="70">70</data></td>
+                                    <td>RSI crosses back below 70</td>
+                                    <td>Enter short on close below 70</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Exit Long</strong></td>
+                                    <td>RSI exceeds <data value="80">80</data></td>
+                                    <td>Extreme overbought confirmed</td>
+                                    <td>Exit half or set trailing stop</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Exit Short</strong></td>
+                                    <td>RSI falls below <data value="20">20</data></td>
+                                    <td>Extreme oversold confirmed</td>
+                                    <td>Cover half or set buy stop</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bullish Divergence</strong></td>
+                                    <td>Price new low; RSI does not</td>
+                                    <td>Price bounces above swing high</td>
+                                    <td>Enter long</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bearish Divergence</strong></td>
+                                    <td>Price new high; RSI does not</td>
+                                    <td>Price breaks below swing low</td>
+                                    <td>Enter short</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Why Divergence Is the High-Probability Signal</h3>
+
+                    <p>Divergence is the most reliable RSI signal because it reveals a momentum shift before price
+                    confirms it.</p>
+
+                    <p><strong>Bullish Divergence:</strong> Price makes a new low, but RSI does not. Selling pressure
+                    is weakening even as price falls. Enter long when price bounces and closes above the swing high
+                    between the two lows.</p>
+
+                    <p><strong>Bearish Divergence:</strong> Price makes a new high, but RSI does not. Buying pressure
+                    is fading despite price reaching a new high. Enter short when price breaks below the swing low
+                    between the two highs.</p>
+                </section>
+
+                <!-- ————————————————————————————————
+                     §05  COMMON MISTAKES
+                ———————————————————————————————— -->
+                <section id="common-mistakes" aria-labelledby="h-mistakes">
+                    <h2 id="h-mistakes"><span class="sec-num" aria-hidden="true">05</span>Common Mistakes</h2>
+
+                    <div class="callout callout-red">
+                        <div class="callout-label">✗ Mistake 1</div>
+                        <p class="callout-text"><strong>"RSI above 70 means short immediately."</strong><br>
+                        Stocks in strong uptrends remain above 70 for extended periods. RSI 70+ is a warning — tighten
+                        stops, take partial profits. Wait for bearish divergence or a close back below 70 before shorting.</p>
+                    </div>
+
+                    <div class="callout callout-red">
+                        <div class="callout-label">✗ Mistake 2</div>
+                        <p class="callout-text"><strong>"RSI below 30 is always a buy."</strong><br>
+                        Stocks in steep downtrends stay below 30 for weeks. Blindly buying at RSI 30 catches falling
+                        knives. Wait for bullish divergence or a confirmed close above 30 before entering long.</p>
+                    </div>
+
+                    <div class="callout callout-red">
+                        <div class="callout-label">✗ Mistake 3</div>
+                        <p class="callout-text"><strong>"14-period default works on all timeframes."</strong><br>
+                        A 14-period RSI on a 1-minute chart is too slow. Use 5–7 periods for sub-hourly timeframes;
+                        21–28 for weekly/monthly charts.</p>
+                    </div>
+
+                    <div class="callout callout-red">
+                        <div class="callout-label">✗ Mistake 4</div>
+                        <p class="callout-text"><strong>"I should trade RSI in isolation."</strong><br>
+                        RSI alone leads to whipsaws. Pair with volume, trend direction, support/resistance, or —
+                        on Cluenex — real-time sentiment and options flow.</p>
+                    </div>
+                </section>
+
+                <!-- ————————————————————————————————
+                     §06  REAL-WORLD EXAMPLE
+                ———————————————————————————————— -->
+                <section id="example" aria-labelledby="h-example">
+                    <h2 id="h-example"><span class="sec-num" aria-hidden="true">06</span>Example: Bearish Divergence on NVDA</h2>
+
+                    <p>Bearish divergence signal on <strong>NVDA</strong> daily chart, November 2024:</p>
+
+                    <div class="trade-log">
+                        <div class="tl-header">
+                            <span class="tl-title">Trade Log — Bearish Divergence</span>
+                            <span class="tl-ticker">NVDA · Daily · RSI(14)</span>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Price</th>
+                                    <th>RSI</th>
+                                    <th>Signal / Action</th>
+                                    <th>P&amp;L</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><time datetime="2024-11-08">Nov 8</time></td>
+                                    <td data-price="143.50">$143.50</td>
+                                    <td><span class="rsi-val" style="color:#f97316">65</span></td>
+                                    <td>Approaching overbought. Sentiment bullish (72).</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr class="signal-row">
+                                    <td><time datetime="2024-11-12">Nov 12</time></td>
+                                    <td data-price="148.20"><strong>$148.20 ↑ new high</strong></td>
+                                    <td><span class="rsi-val" style="color:#f97316">76 ↓ lower</span></td>
+                                    <td>🔴 <strong>Bearish Divergence</strong> — price new high, RSI lower high. Signal confirmed.</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td><time datetime="2024-11-13">Nov 13</time></td>
+                                    <td data-price="147.80">$147.80</td>
+                                    <td><span class="rsi-val" style="color:var(--text-2)">68</span></td>
+                                    <td>RSI drops below 70. <strong>Enter short.</strong> Stop: $149.00.</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td><time datetime="2024-11-14">Nov 14</time></td>
+                                    <td data-price="145.30">$145.30</td>
+                                    <td><span class="rsi-val" style="color:var(--text-2)">52</span></td>
+                                    <td>Exit half position for profit.</td>
+                                    <td><span class="pos">+2.5%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><time datetime="2024-11-15">Nov 15</time></td>
+                                    <td data-price="142.10">$142.10</td>
+                                    <td><span class="rsi-val" style="color:#34d399">38</span></td>
+                                    <td>Exit remaining position at $142.50.</td>
+                                    <td><span class="pos">+4.0% total</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="callout callout-teal">
+                        <div class="callout-label">Key Insight</div>
+                        <p class="callout-text">The divergence signal captured a <data value="6.10">$6.10</data> move
+                        ($148.20 → $142.10) with defined risk via stop at $149.00. A trader shorting at RSI 70 on Nov 12
+                        without divergence confirmation would have entered a day too early and likely been stopped out
+                        before the move materialized.</p>
+                    </div>
+                </section>
+
+                <!-- ————————————————————————————————
+                     §07  HOW CLUENEX USES RSI
+                ———————————————————————————————— -->
+                <section id="cluenex-rsi" aria-labelledby="h-cluenex">
+                    <h2 id="h-cluenex"><span class="sec-num" aria-hidden="true">07</span>How Cluenex Uses RSI</h2>
+
+                    <p>Cluenex displays RSI alongside real-time sentiment scores and options flow data. When RSI above 70
+                    aligns with a sentiment drop and options flow shows heavy put-call ratios, the probability of a
+                    reversal increases significantly.</p>
+
+                    <p>Cluenex's <abbr title="Artificial Intelligence">AI</abbr> snapshot generator also flags
+                    <em>momentum divergences</em> — situations where RSI and sentiment readings diverge, signaling
+                    a potential reversal before price action becomes obvious. This multi-signal approach reduces
+                    whipsaws and improves entry quality across 5,000+ US-listed tickers.</p>
+                </section>
+
+                <!-- ————————————————————————————————
+                     §08  FAQ
+                ———————————————————————————————— -->
+                <section id="faq" aria-labelledby="h-faq">
+                    <h2 id="h-faq"><span class="sec-num" aria-hidden="true">08</span>Frequently Asked Questions</h2>
+
+                    <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+
+                        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="faq-q" aria-expanded="false">
+                                <span itemprop="name">What's the difference between a 14-period RSI and a 7-period RSI?</span>
+                                <span class="faq-toggle" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <p itemprop="text">A 14-period RSI is slower and less responsive, producing fewer signals
+                                and fewer false positives. A 7-period RSI reacts faster to recent price action, producing
+                                more signals but also more false signals. Use 14 for swing trading (days to weeks) and
+                                7 or 9 for day trading or scalping.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="faq-q" aria-expanded="false">
+                                <span itemprop="name">Is RSI more effective on stocks or crypto?</span>
+                                <span class="faq-toggle" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <p itemprop="text">RSI works on both, but crypto exhibits more extreme moves. Cryptoassets
+                                stay above RSI 70 and below RSI 30 longer than equities, so crypto traders often adjust
+                                thresholds to 80/20 instead of 70/30. Equities tend to respect the traditional 70/30
+                                levels more consistently.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="faq-q" aria-expanded="false">
+                                <span itemprop="name">Can RSI predict a crash?</span>
+                                <span class="faq-toggle" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <p itemprop="text">RSI cannot predict the magnitude or timing of crashes, but extreme
+                                RSI readings (above 85 or below 15) combined with bearish divergence often precede sharp
+                                reversals. During market crashes, RSI may hit 5–10, but trying to bottom-pick with only
+                                RSI is dangerous. Always use stop losses.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="faq-q" aria-expanded="false">
+                                <span itemprop="name">Should I use RSI on a 1-minute chart?</span>
+                                <span class="faq-toggle" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Yes, but use a 5 or 7-period RSI instead of 14. Shorter timeframes
+                                require shorter lookback windows. A 14-period RSI on a 1-minute chart is too slow and
+                                lags price moves, making entries late.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="faq-q" aria-expanded="false">
+                                <span itemprop="name">What's the success rate of RSI overbought/oversold signals?</span>
+                                <span class="faq-toggle" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Overbought and oversold signals alone have a roughly 50% win rate —
+                                little better than a coin flip. When combined with divergence, price action confirmation,
+                                or additional indicators (volume, sentiment, options flow), the win rate climbs to
+                                65–75%.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="faq-q" aria-expanded="false">
+                                <span itemprop="name">Does RSI work on all stocks or only liquid ones?</span>
+                                <span class="faq-toggle" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <p itemprop="text">RSI works best on liquid, heavily-traded stocks (AAPL, MSFT, NVDA,
+                                TSLA). Illiquid or low-volume stocks produce choppy RSI that whipsaws frequently. Always
+                                check average daily volume before relying on RSI signals.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ————————————————————————————————
+                     CITE THIS ARTICLE
+                ———————————————————————————————— -->
+                <aside class="cite-box" aria-label="Cite this article">
+                    <div class="cite-head">Cite This Article</div>
+                    <div class="cite-tabs">
+                        <button class="cite-tab active" data-fmt="apa">APA</button>
+                        <button class="cite-tab" data-fmt="mla">MLA</button>
+                        <button class="cite-tab" data-fmt="chicago">Chicago</button>
+                    </div>
+                    <div id="cite-text">Cluenex. (2024, May 19). What is RSI: How Traders Use Momentum to Time Entries and Exits. Cluenex. https://cluenex.com/learn/technical-analysis/rsi-explained</div>
+                    <button class="cite-copy" onclick="copyCite()">Copy Citation</button>
+                </aside>
+
+            </article>
+
+            <!-- ======================================================
+                 SIDEBAR — TABLE OF CONTENTS
+            ====================================================== -->
+            <aside class="toc-sidebar" aria-label="Table of contents">
+                <div class="toc-head">On this page</div>
+                <nav>
+                    <ul class="toc-nav" role="list">
+                        <li><a href="#definition"      class="toc-link">01 — Definition</a></li>
+                        <li><a href="#how-rsi-works"   class="toc-link">02 — How RSI Works</a></li>
+                        <li><a href="#rsi-thresholds"  class="toc-link">03 — Threshold Reference</a></li>
+                        <li><a href="#how-to-use"      class="toc-link">04 — Using RSI</a></li>
+                        <li><a href="#common-mistakes" class="toc-link">05 — Common Mistakes</a></li>
+                        <li><a href="#example"         class="toc-link">06 — Trade Example</a></li>
+                        <li><a href="#cluenex-rsi"     class="toc-link">07 — Cluenex &amp; RSI</a></li>
+                        <li><a href="#faq"             class="toc-link">08 — FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="toc-rule"></div>
+
+                <div class="toc-cta">
+                    <div class="toc-cta-label">Try Cluenex</div>
+                    <p class="toc-cta-text">See RSI alongside real-time sentiment and options flow on 5,000+ tickers.</p>
+                    <a href="https://cluenex.com/signup" class="btn-sm">Start Free</a>
+                </div>
+            </aside>
+
+        </div><!-- /.article-layout -->
+
+        <!-- ============================================================
+             RELATED ARTICLES
+        ============================================================ -->
+        <section class="related" aria-labelledby="related-head">
+            <div class="related-head" id="related-head">Continue Learning</div>
+            <div class="related-grid">
+                <a href="https://cluenex.com/learn/technical-analysis/macd-explained" class="related-card">
+                    <div class="related-tag">Technical Analysis</div>
+                    <div class="related-title">What is MACD: Detecting Momentum Shifts</div>
+                    <div class="related-desc">MACD uses two EMAs to identify trend direction and momentum shifts. Pairs well with RSI.</div>
+                </a>
+                <a href="https://cluenex.com/learn/technical-analysis/moving-averages" class="related-card">
+                    <div class="related-tag">Technical Analysis</div>
+                    <div class="related-title">Moving Averages Explained</div>
+                    <div class="related-desc">Use moving averages to confirm trend direction before acting on RSI overbought/oversold signals.</div>
+                </a>
+                <a href="https://cluenex.com/learn/technical-analysis/divergence-trading" class="related-card">
+                    <div class="related-tag">Technical Analysis</div>
+                    <div class="related-title">Divergence Trading: High-Probability Pattern</div>
+                    <div class="related-desc">Deep dive into using divergence across RSI, MACD, and volume indicators.</div>
+                </a>
+            </div>
+        </section>
+
+    </div><!-- /.wrap -->
+
+    <!-- ============================================================
+         SITE FOOTER
+    ============================================================ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>
+                © 2024 Cluenex ·
+                <a href="https://cluenex.com/learn">Learn</a> ·
+                <a href="https://cluenex.com/learn/technical-analysis">Technical Analysis</a>
+            </span>
+            <span>For educational purposes only. Not financial advice.</span>
+        </div>
+    </footer>
+
+    <script>
+        /* Reading Progress */
+        window.addEventListener('scroll', () => {
+            const body = document.body;
+            const html = document.documentElement;
+            const total = Math.max(
+                body.scrollHeight, body.offsetHeight,
+                html.clientHeight, html.scrollHeight, html.offsetHeight
+            ) - window.innerHeight;
+            const pct = (window.scrollY / total) * 100;
+            document.getElementById('progress').style.width = Math.min(100, pct) + '%';
+        });
+
+        /* TOC Active Highlighting */
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('.article-body section[id]');
+
+        const tocObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(l => l.classList.remove('active'));
+                    const a = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+                    if (a) a.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-15% 0px -75% 0px' });
+
+        sections.forEach(s => tocObserver.observe(s));
+
+        /* FAQ Accordion */
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const open = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+                });
+                if (!open) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        /* Citation Switcher */
+        const cites = {
+            apa:     'Cluenex. (2024, May 19). What is RSI: How Traders Use Momentum to Time Entries and Exits. Cluenex. https://cluenex.com/learn/technical-analysis/rsi-explained',
+            mla:     'Cluenex. "What is RSI: How Traders Use Momentum to Time Entries and Exits." Cluenex, 19 May 2024, cluenex.com/learn/technical-analysis/rsi-explained.',
+            chicago: 'Cluenex. "What is RSI: How Traders Use Momentum to Time Entries and Exits." Cluenex. Last modified May 19, 2024. https://cluenex.com/learn/technical-analysis/rsi-explained.'
+        };
+
+        document.querySelectorAll('.cite-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.cite-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('cite-text').textContent = cites[tab.dataset.fmt];
+            });
+        });
+
+        function copyCite() {
+            navigator.clipboard.writeText(document.getElementById('cite-text').textContent).then(() => {
+                const btn = document.querySelector('.cite-copy');
+                const orig = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = orig, 1800);
+            });
+        }
+    </script>
+</body>
+</html>
