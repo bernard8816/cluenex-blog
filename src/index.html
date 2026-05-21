@@ -69,14 +69,21 @@ permalink: /index.html
             margin-bottom: 40px;
             text-align: center;
         }
+        #featured {
+            width: 100%;
+            overflow: visible;
+        }
         .articles-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 24px;
+            width: 100%;
+            max-width: 100%;
+            overflow: visible;
         }
         @media (max-width: 1024px) {
             .articles-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 20px;
             }
         }
@@ -90,14 +97,16 @@ permalink: /index.html
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--r-lg);
-            padding: 16px;
-            padding-top: 8px;
+            padding: 20px;
+            padding-top: 12px;
             text-decoration: none;
             display: flex;
             flex-direction: column;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             color: inherit;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            min-height: 280px;
+            overflow: hidden;
         }
         .article-card:hover {
             background: var(--bg-card);
@@ -105,6 +114,9 @@ permalink: /index.html
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
         }
         @media (max-width: 768px) {
+            .article-card {
+                min-height: auto;
+            }
             .article-card:hover {
                 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
             }
