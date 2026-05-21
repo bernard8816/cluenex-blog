@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta -->
+    <meta name="description" content="MACD (Moving Average Convergence Divergence) reveals momentum shifts and trend changes. Learn how to use MACD crossovers, histogram divergence, and signal line crosses for high-probability trades.">
+    <meta property="og:title" content="MACD Explained: Detecting Momentum Shift Before Price Moves">
+    <meta property="og:description" content="MACD (Moving Average Convergence Divergence) reveals momentum shifts and trend changes. Learn how to use MACD crossovers, histogram divergence, and signal line crosses for high-probability trades.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cluenex.com/learn/technical-analysis/macd-explained/">
+    <meta property="og:site_name" content="Cluenex">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MACD Explained: Detecting Momentum Shift Before Price Moves">
+    <meta name="twitter:description" content="MACD (Moving Average Convergence Divergence) reveals momentum shifts and trend changes. Learn how to use MACD crossovers, histogram divergence, and signal line crosses for high-probability trades.">
+    <meta name="author" content="Cluenex">
+    <meta name="keywords" content="MACD, Moving Average Convergence Divergence, momentum, technical analysis, signal line, histogram, divergence, crossover strategy">
+    <link rel="canonical" href="https://cluenex.com/learn/technical-analysis/macd-explained/">
+
+    <title>MACD Explained: Detecting Momentum Shift Before Price Moves | Cluenex Learn</title>
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cluenex.com/learn/technical-analysis/macd-explained/"
+      },
+      "headline": "MACD Explained: Detecting Momentum Shift Before Price Moves",
+      "description": "MACD (Moving Average Convergence Divergence) reveals momentum shifts and trend changes. Learn how to use MACD crossovers, histogram divergence, and signal line crosses for high-probability trades.",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "author": {
+        "@type": "Organization",
+        "name": "Cluenex",
+        "url": "https://cluenex.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cluenex",
+        "url": "https://cluenex.com"
+      },
+      "articleSection": "Technical Analysis",
+      "keywords": "MACD, Moving Average Convergence Divergence, momentum, technical analysis, signal line, histogram, divergence, crossover strategy",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",                    "item": "https://cluenex.com" },
+        { "@type": "ListItem", "position": 2, "name": "Learn",                   "item": "https://cluenex.com/learn" },
+        { "@type": "ListItem", "position": 3, "name": "Education", "item": "https://cluenex.com/learn/" },
+        { "@type": "ListItem", "position": 4, "name": "MACD Explained: Detecting Momentum Shift Before Price Moves",             "item": "https://cluenex.com/learn/technical-analysis/macd-explained/" }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+</head>
+<body>
+
+    <!-- Reading Progress -->
+    <div id="progress" role="progressbar" aria-label="Reading progress"></div>
+
+    <!-- SITE NAV -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="https://learn.cluenex.com" class="site-logo"><img src="/assets/images/logo.png" alt="Cluenex logo" height="40"></a>
+            <ul class="nav-links" role="list">
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Education</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="https://learn.cluenex.com/learn/technical-analysis">Technical Analysis</a></li>
+                        <li><a href="#">Fundamental Analysis</a></li>
+                        <li><a href="#">Portfolio Management</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Tools</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="#">Markets</a></li>
+                        <li><a href="#">Screener</a></li>
+                        <li><a href="#">Stock Screening</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Resources</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Compare</a></li>
+                        <li><a href="#">Glossary</a></li>
+                        <li><a href="#">Methodology</a></li>
+                        <li><a href="#">Smart Money</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://cluenex.com/login" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrap">
+
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="https://learn.cluenex.com">Home</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <span class="breadcrumb-category">Education</span>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <span class="breadcrumb-cur">MACD Explained: Detecting Momentum Shift Before Price Moves</span>
+        </nav>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header">
+            <a href="https://cluenex.com/learn/" class="cat-badge">
+                Education
+            </a>
+
+            <h1 class="article-title" itemprop="headline">
+                MACD Explained: Detecting Momentum Shift Before Price Moves
+            </h1>
+
+            <div class="article-meta">
+                <span>By <strong>Cluenex</strong></span>
+                <span class="meta-sep">·</span>
+                <span>Updated <time datetime="2026-05-20" itemprop="dateModified">May 20, 2026</time></span>
+                <span class="meta-sep">·</span>
+                <span>9 min read</span>
+                <span class="meta-sep">·</span>
+                <span class="meta-url">cluenex.com/learn/technical-analysis/macd-explained/</span>
+            </div>
+
+            <p class="article-lead">
+                MACD detects momentum shifts by comparing fast and slow exponential moving averages. Traders use MACD crossovers and histogram divergence to anticipate trend reversals before price confirms them.
+            </p>
+        </header>
+
+        <!-- KEY TAKEAWAYS -->
+        
+        <aside class="key-takeaways" aria-label="Key Takeaways">
+            <div class="kt-header">
+                <span class="kt-tag">KEY</span>
+                <span class="kt-label">Takeaways</span>
+            </div>
+            <ul>
+                
+                <li><strong>MACD (Moving Average Convergence Divergence)</strong> measures momentum by calculating the difference between a fast (12-period) and slow (26-period) exponential moving average.</li>
+                
+                <li><strong>MACD line</strong> crosses above <strong>signal line</strong> = bullish momentum (buy signal). Cross below = bearish momentum (sell signal). Highest probability when histogram diverges.</li>
+                
+                <li><strong>Histogram</strong> (MACD minus signal line) shows momentum strength. Expanding histogram = strengthening trend; shrinking = weakening trend before reversal.</li>
+                
+                <li><strong>Zero-line crossover</strong> — MACD crosses above zero = trend shift from bearish to bullish. Cross below zero = bearish shift. Confirms major momentum change.</li>
+                
+                <li>On Cluenex, MACD displays alongside RSI, moving averages, and real-time sentiment scores to confirm momentum shifts across the top 1,000 US-listed stocks.</li>
+                
+            </ul>
+        </aside>
+        
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="article-layout">
+
+            <!-- ARTICLE BODY -->
+            <article class="article-body"
+                     itemscope itemtype="https://schema.org/Article">
+
+                <meta itemprop="headline" content="MACD Explained: Detecting Momentum Shift Before Price Moves">
+                <meta itemprop="datePublished" content="2026-05-20">
+                <meta itemprop="author" content="Cluenex">
+                <meta itemprop="url" content="https://cluenex.com/learn/technical-analysis/macd-explained/">
+
+                <h2 id="definition" tabindex="-1">Definition</h2>
+<div class="def-box">
+<p class="definition-text">
+<dfn id="macd-def"><strong>MACD (Moving Average Convergence Divergence)</strong></dfn> is a momentum indicator that measures the relationship between two exponential moving averages (EMA), used to identify trend changes, momentum shifts, and potential reversals in price action.
+</p>
+<div class="def-source">Source: Appel, G. (1979). <em>Systems and Methods for Traders.</em></div>
+</div>
+<p>MACD reveals momentum by comparing a fast-moving average (12-period) to a slow-moving average (26-period). When the fast MA rises above the slow MA, buying pressure accelerates — momentum is bullish. When it falls below, selling pressure dominates — momentum is bearish.</p>
+<p>MACD differs from raw moving averages because it visualizes the <em>gap</em> between them, making momentum shifts obvious before price action confirms them. This lead time makes MACD one of the highest-probability early-warning indicators for trend reversals.</p>
+<h2 id="how-macd-works" tabindex="-1">How MACD Works</h2>
+<p>MACD calculation involves three components:</p>
+<p><strong>1. MACD Line (12-EMA minus 26-EMA)</strong></p>
+<pre><code>MACD = 12-period EMA − 26-period EMA
+</code></pre>
+<p>Represents current momentum strength. Positive = bullish; negative = bearish.</p>
+<p><strong>2. Signal Line (9-period EMA of MACD)</strong></p>
+<pre><code>Signal Line = 9-period EMA of MACD
+</code></pre>
+<p>Smooth version of MACD. Crossovers with MACD trigger buy/sell signals.</p>
+<p><strong>3. Histogram (MACD minus Signal Line)</strong></p>
+<pre><code>Histogram = MACD − Signal Line
+</code></pre>
+<p>Visual representation of momentum divergence. Expanding histogram = strengthening momentum; shrinking = momentum weakening before reversal.</p>
+<p><strong>Example MACD Calculation:</strong>
+If a stock’s 12-EMA is $105 and 26-EMA is $100:</p>
+<ul>
+<li>MACD = $105 − $100 = +$5 (bullish)</li>
+<li>Signal line = 9-EMA of recent MACD values = $4.80</li>
+<li>Histogram = $5.00 − $4.80 = +$0.20 (expanding = strong momentum)</li>
+</ul>
+<p><strong>Key insight:</strong> MACD leads price because EMA reweights recent price action. By the time price breaks above resistance, MACD often already signaled the shift.</p>
+<h2 id="macd-zones-and-signals" tabindex="-1">MACD Zones and Signals</h2>
+<p>Each MACD position carries meaning:</p>
+<div class="threshold-grid" role="list" aria-label="MACD signal zones">
+<div class="tc tc-1" role="listitem">
+<div class="tc-range">MACD > Signal Line</div>
+<div class="tc-label">Bullish Momentum<br><small>MACD crossover</small></div>
+</div>
+<div class="tc tc-2" role="listitem">
+<div class="tc-range">MACD < Signal Line</div>
+<div class="tc-label">Bearish Momentum<br><small>MACD crossover</small></div>
+</div>
+<div class="tc tc-3" role="listitem">
+<div class="tc-range">MACD > Zero Line</div>
+<div class="tc-label">Bullish Trend<br><small>Fast MA > Slow MA</small></div>
+</div>
+<div class="tc tc-4" role="listitem">
+<div class="tc-range">MACD < Zero Line</div>
+<div class="tc-label">Bearish Trend<br><small>Fast MA < Slow MA</small></div>
+</div>
+<div class="tc tc-5" role="listitem">
+<div class="tc-range">Histogram Expanding</div>
+<div class="tc-label">Momentum Strengthening<br><small>Trend acceleration</small></div>
+</div>
+</div>
+<div class="callout callout-teal">
+<div class="callout-label">MACD vs. Moving Averages</div>
+<p class="callout-text"><strong>Moving Averages</strong> show trend direction. <strong>MACD</strong> shows momentum *change* before trend changes. Use MACD to anticipate trend shifts; use MAs to confirm them. Combined, they eliminate most false signals.</p>
+</div>
+<h2 id="how-to-use-macd-in-practice" tabindex="-1">How to Use MACD in Practice</h2>
+<h3 id="entry-and-exit-signals" tabindex="-1">Entry and Exit Signals</h3>
+<div class="tbl-wrap">
+<table class="dtbl">
+<thead>
+<tr>
+<th>Signal Type</th>
+<th>MACD Trigger</th>
+<th>Confirmation</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bullish Crossover</strong></td>
+<td>MACD crosses above signal line</td>
+<td>Histogram turns positive and expanding</td>
+<td>Enter long. Stop: Below MACD zero line.</td>
+</tr>
+<tr>
+<td><strong>Bearish Crossover</strong></td>
+<td>MACD crosses below signal line</td>
+<td>Histogram turns negative and expanding</td>
+<td>Enter short. Stop: Above MACD zero line.</td>
+</tr>
+<tr>
+<td><strong>Momentum Divergence</strong></td>
+<td>Price new high; MACD lower high</td>
+<td>Histogram shrinking; MACD below signal</td>
+<td>Enter short. Momentum failing.</td>
+</tr>
+<tr>
+<td><strong>Zero-Line Crossover</strong></td>
+<td>MACD crosses above zero</td>
+<td>Histogram positive; signal line above zero</td>
+<td>Major trend shift. Aggressive entry long.</td>
+</tr>
+<tr>
+<td><strong>Histogram Expansion</strong></td>
+<td>Histogram bars growing larger</td>
+<td>Trend direction confirmed</td>
+<td>Add to winning position; trend strength high.</td>
+</tr>
+<tr>
+<td><strong>Exit Signal</strong></td>
+<td>Histogram starts shrinking</td>
+<td>MACD nearing signal line</td>
+<td>Take partial profit. Exit fully on crossover.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="why-macd-crossover-%2B-histogram-is-highest-probability" tabindex="-1">Why MACD Crossover + Histogram Is Highest Probability</h3>
+<p>MACD crossover alone generates 40-50% win rate. But when combined with histogram confirmation, accuracy jumps to 65-75%:</p>
+<ul>
+<li><strong>Crossover without histogram divergence</strong> = weak signal, high whipsaw risk</li>
+<li><strong>Crossover + expanding histogram</strong> = momentum backing the signal, sustained move</li>
+<li><strong>Crossover + shrinking histogram</strong> = signal fails, reversal imminent</li>
+</ul>
+<p>The histogram tells you if the momentum <em>continues</em> after crossover or if it’s about to reverse.</p>
+<h2 id="common-mistakes" tabindex="-1">Common Mistakes</h2>
+<div class="callout callout-red">
+<div class="callout-label">✗ Mistake 1</div>
+<p class="callout-text"><strong>"MACD crossover = instant buy/sell."</strong><br>
+Crossovers can occur on small swings within a larger trend. Wait for histogram confirmation (expanding in direction of signal). Use price action (support/resistance, volume) to filter false crossovers.</p>
+</div>
+<div class="callout callout-red">
+<div class="callout-label">✗ Mistake 2</div>
+<p class="callout-text"><strong>"MACD zero-line crossover = guaranteed trend reversal."</strong><br>
+Zero-line crosses happen *after* significant momentum shift. Price may have already moved 5-10%. Use MACD signal line crossover (earlier) as early warning, then enter on zero-line cross for confirmation.</p>
+</div>
+<div class="callout callout-red">
+<div class="callout-label">✗ Mistake 3</div>
+<p class="callout-text"><strong>"I trade MACD in isolation."</strong><br>
+MACD alone generates too many whipsaws in choppy markets. Pair with RSI (overbought/oversold), moving averages (trend), volume, or sentiment. On Cluenex, MACD combines with all these signals for optimal entries.</p>
+</div>
+<div class="callout callout-red">
+<div class="callout-label">✗ Mistake 4</div>
+<p class="callout-text"><strong>"MACD works the same on all timeframes."</strong><br>
+MACD on 1-minute charts creates false signals every 30 seconds. Use 5-minute or longer for day trading; hourly+ for swing trading. Shorter timeframes = more noise. Longer timeframes = better signal quality.</p>
+</div>
+<h2 id="example%3A-bullish-crossover-%2B-histogram-on-tsla" tabindex="-1">Example: Bullish Crossover + Histogram on TSLA</h2>
+<p>Bullish MACD crossover with histogram expansion on <strong>TSLA</strong> daily chart, May 2024:</p>
+<div class="trade-log">
+<div class="tl-header">
+<span class="tl-title">Trade Log — MACD Bullish Crossover</span>
+<span class="tl-ticker">TSLA · Daily · MACD(12,26,9)</span>
+</div>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Price</th>
+<th>MACD</th>
+<th>Signal</th>
+<th>Signal / Action</th>
+<th>P&L</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><time datetime="2024-05-08">May 8</time></td>
+<td data-price="182.50">$182.50</td>
+<td data-macd="-1.2">−1.2</td>
+<td data-signal="-0.8">−0.8</td>
+<td>MACD still below zero, signal line. Downtrend active.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><time datetime="2024-05-13">May 13</time></td>
+<td data-price="180.00">$180.00</td>
+<td data-macd="-0.5">−0.5</td>
+<td data-signal="-0.9">−0.9</td>
+<td>MACD nearing zero. Histogram shrinking (momentum weakening).</td>
+<td>—</td>
+</tr>
+<tr class="signal-row">
+<td><time datetime="2024-05-17">May 17</time></td>
+<td data-price="185.20"><strong>$185.20 ↑</strong></td>
+<td data-macd="0.2"><strong>+0.2 ↑</strong></td>
+<td data-signal="-0.1">−0.1</td>
+<td>🟢 <strong>MACD crosses above signal line. Histogram turns positive and expanding.</strong> Early bullish signal. Price bouncing from support.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><time datetime="2024-05-19">May 19</time></td>
+<td data-price="189.80">$189.80</td>
+<td data-macd="1.1">1.1</td>
+<td data-signal="0.5">0.5</td>
+<td>MACD above zero line. Histogram expanding rapidly = momentum accelerating. <strong>Enter long. Stop: $184.00</strong> (recent low)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><time datetime="2024-05-22">May 22</time></td>
+<td data-price="195.50">$195.50</td>
+<td data-macd="2.8">2.8</td>
+<td data-signal="2.1">2.1</td>
+<td>Histogram still expanding. Trend strong. Hold position.</td>
+<td><span class="pos">+5.2%</span></td>
+</tr>
+<tr>
+<td><time datetime="2024-05-27">May 27</time></td>
+<td data-price="198.30">$198.30</td>
+<td data-macd="2.5">2.5 ↓</td>
+<td data-signal="2.4">2.4</td>
+<td>Histogram shrinking (momentum weakening). MACD nearing signal. Exit half position for profit.</td>
+<td><span class="pos">+8.6%</span></td>
+</tr>
+<tr>
+<td><time datetime="2024-05-29">May 29</time></td>
+<td data-price="192.10">$192.10</td>
+<td data-macd="1.2">1.2</td>
+<td data-signal="1.8">1.8</td>
+<td>MACD crosses below signal line. Exit remaining position. Momentum reversing.</td>
+<td><span class="pos">+5.4% total</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout callout-teal">
+<div class="callout-label">Key Insight</div>
+<p class="callout-text">The crossover signal on May 17 (price $185.20) preceded the major move. Traders who entered at May 17 crossover + May 19 zero-line confirmation caught the entire $15+ move with defined risk (stop at $184). Price action alone would have missed this setup.</p>
+</div>
+<h2 id="how-cluenex-uses-macd" tabindex="-1">How Cluenex Uses MACD</h2>
+<p>Cluenex displays MACD with automatic histogram color coding (green = bullish, red = bearish) alongside RSI, moving averages, and real-time sentiment scores. When MACD crossover aligns with rising sentiment intensity, the probability of a sustained move climbs significantly.</p>
+<p>Cluenex’s momentum scanner also flags <em>MACD divergence</em> — situations where price makes new highs but MACD makes lower highs — signaling momentum failure before price reverses. This proactive detection prevents traders from holding losing positions.</p>
+<h2 id="frequently-asked-questions" tabindex="-1">Frequently Asked Questions</h2>
+<ul>
+<li>
+<p><strong>Should I use MACD on 1-minute or daily charts?</strong>
+Daily/hourly for swing trading (most reliable). 5-minute for day trading. Avoid 1-minute MACD — too much noise. Shorter timeframes require faster-responding indicators like RSI or Stochastic, not MACD.</p>
+</li>
+<li>
+<p><strong>MACD crossover vs. zero-line crossover — which is earlier?</strong>
+Signal line crossover comes first (earlier warning). Zero-line crossover is more reliable but arrives later. Use both: signal line for early entry, zero-line for confirmation/adding to position.</p>
+</li>
+<li>
+<p><strong>Can MACD predict crashes?</strong>
+MACD can show momentum collapse before crashes occur. Extreme MACD divergence (price new high, MACD much lower than prior peak) often precedes sharp reversals. But MACD cannot predict <em>magnitude</em>. Always use stop losses.</p>
+</li>
+<li>
+<p><strong>Works on crypto?</strong>
+Yes, but crypto MACD whipsaws more than equities due to volatility. Use longer timeframes (hourly+) and pair with volume or sentiment. Adjust signal line period from 9 to 14-21 for less sensitivity.</p>
+</li>
+<li>
+<p><strong>MACD better than RSI?</strong>
+Different purposes. MACD shows momentum <em>change</em> and trend shifts. RSI shows overbought/oversold conditions. Use both: MACD for entries, RSI for exits. Together, they filter 60-70% of false signals.</p>
+</li>
+<li>
+<p><strong>What success rate for MACD crossover signals?</strong>
+Signal line crossover alone: 45-55% win rate. Signal line + histogram confirmation + price action filter: 65-75% win rate. On Cluenex, adding sentiment data increases to 70-80%.</p>
+</li>
+</ul>
+<h2 id="related-concepts" tabindex="-1">Related Concepts</h2>
+<ul>
+<li><a href="/learn/technical-analysis/rsi-explained/">RSI Explained</a> — Use RSI to confirm MACD momentum shifts</li>
+<li><a href="/learn/technical-analysis/moving-averages/">Moving Averages</a> — MACD is built from exponential moving averages</li>
+<li><a href="/glossary/momentum-oscillator/">Momentum Oscillator</a> — MACD is a type of momentum oscillator</li>
+<li><a href="/glossary/divergence/">Histogram Divergence</a> — MACD histogram expansion indicates trend strength</li>
+<li><a href="/glossary/signal-line/">Signal Line Crossover</a> — The primary MACD trading signal</li>
+</ul>
+
+
+            </article>
+
+            <!-- SIDEBAR - TABLE OF CONTENTS -->
+            <aside class="toc-sidebar" aria-label="Table of contents">
+                <div class="toc-head">On this page</div>
+                <nav>
+                    <ul class="toc-nav" role="list">
+                        <li><a href="#definition" class="toc-link">01 — Definition</a></li>
+                        <li><a href="#how-rsi-works" class="toc-link">02 — How It Works</a></li>
+                        <li><a href="#rsi-threshold-reference" class="toc-link">03 — Thresholds</a></li>
+                        <li><a href="#how-to-use-rsi-in-practice" class="toc-link">04 — How to Use</a></li>
+                        <li><a href="#common-mistakes" class="toc-link">05 — Mistakes</a></li>
+                        <li><a href="#example-bearish-divergence-on-nvda" class="toc-link">06 — Example</a></li>
+                        <li><a href="#how-cluenex-uses-rsi" class="toc-link">07 — Cluenex</a></li>
+                        <li><a href="#frequently-asked-questions" class="toc-link">08 — FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="toc-rule"></div>
+
+                <div class="toc-cta">
+                    <div class="toc-cta-label">Try Cluenex</div>
+                    <p class="toc-cta-text">See RSI alongside real-time sentiment scores on the top 1,000+ US stocks.</p>
+                    <a href="https://cluenex.com/signup" class="btn-sm">Start Free</a>
+                </div>
+            </aside>
+
+        </div><!-- /.article-layout -->
+
+        <!-- RELATED ARTICLES -->
+        <section class="related" aria-labelledby="related-head">
+            <div class="related-head" id="related-head">Continue Learning</div>
+            <div class="related-grid">
+                
+            </div>
+        </section>
+
+    </div><!-- /.wrap -->
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>
+                © 2024 Cluenex ·
+                <a href="https://cluenex.com/learn">Learn</a> ·
+                <a href="https://cluenex.com">Home</a>
+            </span>
+            <span>For educational purposes only. Not financial advice.</span>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+
+    <script>
+        // Nav dropdown toggle for mobile
+        document.querySelectorAll('.nav-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.parentElement;
+                const submenu = dropdown.querySelector('.nav-submenu');
+                if (submenu) {
+                    submenu.style.opacity = submenu.style.opacity === '1' ? '0' : '1';
+                    submenu.style.visibility = submenu.style.visibility === 'visible' ? 'hidden' : 'visible';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

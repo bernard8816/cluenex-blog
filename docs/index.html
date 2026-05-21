@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cluenex | Learn Stock Market</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta name="description" content="Free, LLM-optimized education on technical analysis, trading signals, and stock market fundamentals.">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <style>
+        .hero {
+            padding: 80px 0 120px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: var(--ff-display);
+            font-size: clamp(2em, 5vw, 3.5em);
+            color: #f0ece3;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.15em;
+            color: #b5afa3;
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-lg {
+            padding: 12px 28px;
+            font-size: 0.95em;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .btn-primary-lg {
+            background: var(--gold);
+            color: var(--text-inv);
+        }
+        .btn-primary-lg:hover {
+            background: var(--gold-l);
+            transform: translateY(-2px);
+        }
+        .btn-secondary-lg {
+            background: var(--bg-card);
+            border: 1px solid var(--border-l);
+            color: var(--text-1);
+        }
+        .btn-secondary-lg:hover {
+            border-color: var(--gold);
+            color: var(--gold-l);
+        }
+        .section-title {
+            font-family: var(--ff-display);
+            font-size: 2em;
+            color: #f0ece3;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        #featured {
+            width: 100%;
+            overflow: visible;
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 100%;
+            overflow: visible;
+        }
+        @media (max-width: 1024px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+        .article-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 20px;
+            padding-top: 12px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            color: inherit;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            min-height: 340px;
+            overflow: hidden;
+        }
+        .article-card:hover {
+            background: var(--bg-card);
+            border-color: var(--gold-border);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+        @media (max-width: 768px) {
+            .article-card {
+                min-height: auto;
+            }
+            .article-card:hover {
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .article-card {
+                transition: border-color 0.2s ease-out;
+            }
+            .article-card:hover {
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            }
+        }
+        .card-category {
+            margin-bottom: 12px;
+        }
+        .category-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            background: var(--gold);
+            color: var(--text-inv);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-1);
+            line-height: 1.4;
+            margin: 0 0 12px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .card-excerpt {
+            font-size: 15px;
+            color: var(--text-2);
+            margin: 0 0 12px 0;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .card-meta {
+            font-size: 13px;
+            color: var(--text-2);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: auto;
+        }
+        .card-meta .separator {
+            opacity: 0.5;
+        }
+        .cta-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 40px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .cta-section h3 {
+            font-family: var(--ff-display);
+            font-size: 1.8em;
+            color: #f0ece3;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            font-size: 1em;
+            color: #b5afa3;
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-section .btn-primary-lg {
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .post-card {
+                width: 90vw;
+            }
+            .carousel-controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SITE NAV -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="/" class="site-logo"><img src="/assets/images/logo.png" alt="Cluenex logo" height="40"></a>
+            <ul class="nav-links" role="list">
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Education</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="/learn/technical-analysis/">Technical Analysis</a></li>
+                        <li><a href="#">Fundamental Analysis</a></li>
+                        <li><a href="#">Portfolio Management</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Tools</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="#">Markets</a></li>
+                        <li><a href="#">Screener</a></li>
+                        <li><a href="#">Stock Screening</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Resources</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Compare</a></li>
+                        <li><a href="#">Glossary</a></li>
+                        <li><a href="#">Methodology</a></li>
+                        <li><a href="#">Smart Money</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://cluenex.com/login" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="wrap">
+        <div class="hero">
+            <h1>Learn Stock Market & Trading</h1>
+            <p>Free, LLM-optimized education on technical analysis, momentum indicators, and smart money signals.</p>
+            <div class="cta-buttons">
+                <a href="#featured" class="btn-lg btn-primary-lg">Explore Articles</a>
+                <a href="https://cluenex.com" class="btn-lg btn-secondary-lg">Visit Cluenex →</a>
+            </div>
+        </div>
+
+        <!-- LATEST LEARNING GRID -->
+        <section id="featured">
+            <h2 class="section-title">Latest Learning</h2>
+            <div class="articles-grid">
+                    <a href="/learn/technical-analysis/yield-curve-inversion/" class="article-card">
+                        <div class="card-category">
+                            <span class="category-pill">Technical Analysis</span>
+                        </div>
+                        <h3 class="card-title">What is the Yield Curve and What Does an Inversion Mean for Stocks</h3>
+                        <p class="card-excerpt">Yield curve inversion is the most reliable recession predictor. When 2-year Treasury yield &gt; 10-year yield, bear market follows 80% of time within 6-12 months. Learn to monitor the curve for macro signals.</p>
+                        <div class="card-meta">
+                            <span class="read-time">10 min read</span>
+                            <span class="separator">·</span>
+                            <time datetime="2026-05-20">May 20</time>
+                        </div>
+                    </a>
+                    <a href="/learn/technical-analysis/volume-analysis/" class="article-card">
+                        <div class="card-category">
+                            <span class="category-pill">Technical Analysis</span>
+                        </div>
+                        <h3 class="card-title">Volume Analysis Explained: Why Volume Confirms Price Moves and Invalidates False Breakouts</h3>
+                        <p class="card-excerpt">Price without volume is noise. High volume + breakout = real move. Low volume + breakout = fakeout. Master volume confirmation to eliminate 60% of false signals.</p>
+                        <div class="card-meta">
+                            <span class="read-time">10 min read</span>
+                            <span class="separator">·</span>
+                            <time datetime="2026-05-20">May 20</time>
+                        </div>
+                    </a>
+                    <a href="/learn/technical-analysis/vix-explained/" class="article-card">
+                        <div class="card-category">
+                            <span class="category-pill">Technical Analysis</span>
+                        </div>
+                        <h3 class="card-title">What is the VIX? The Stock Market&#39;s Fear Index Explained for Traders</h3>
+                        <p class="card-excerpt">VIX (Volatility Index) measures implied volatility of S&amp;P 500 options. VIX spikes above 30 = crash or correction (bottom often near). VIX below 15 = low volatility (top forming). Traders use VIX to time bottoms and predict reversals.</p>
+                        <div class="card-meta">
+                            <span class="read-time">11 min read</span>
+                            <span class="separator">·</span>
+                            <time datetime="2026-05-20">May 20</time>
+                        </div>
+                    </a>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <h3>Unlock Premium Insights</h3>
+            <p>Join traders and institutions using real-time sentiment, technical analysis, and smart money signals on the top 1,000+ US-listed stocks. Limited free access — upgrade today.</p>
+            <a href="https://cluenex.com/login" class="btn-lg btn-primary-lg">Start Free</a>
+        </section>
+
+        <!-- INFO -->
+        <section style="text-align: center; padding: 60px 0; border-top: 1px solid var(--border); margin-top: 80px;">
+            <p style="color: var(--text-2); font-size: 0.95em; line-height: 1.8;">
+                All content is optimized for LLM citation and created with the latest search engine standards in mind.<br>
+                Learn from educational articles written by traders, for traders.
+            </p>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>
+                © 2024 Cluenex ·
+                <a href="/learn">Learn</a> ·
+                <a href="https://cluenex.com">Home</a>
+            </span>
+            <span>For educational purposes only. Not financial advice.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Nav dropdown toggle for mobile
+        document.querySelectorAll('.nav-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.parentElement;
+                const submenu = dropdown.querySelector('.nav-submenu');
+                if (submenu) {
+                    submenu.style.opacity = submenu.style.opacity === '1' ? '0' : '1';
+                    submenu.style.visibility = submenu.style.visibility === 'visible' ? 'hidden' : 'visible';
+                }
+            });
+        });
+
+        // Articles grid is static (no carousel behavior)
+    </script>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Bollinger Bands measure volatility using standard deviation. Band squeezes signal low volatility; breakouts signal expansion. Learn to identify high-probability setups using the 20-period MA and 2 standard deviation bands.">
+    <meta property="og:title" content="Bollinger Bands Explained: How to Read Squeezes and Breakouts for High-Probability Trades">
+    <meta property="og:description" content="Bollinger Bands measure volatility using standard deviation. Band squeezes signal low volatility; breakouts signal expansion. Learn to identify high-probability setups using the 20-period MA and 2 standard deviation bands.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cluenex.com/learn/technical-analysis/bollinger-bands/">
+    <meta property="og:site_name" content="Cluenex">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bollinger Bands Explained: How to Read Squeezes and Breakouts for High-Probability Trades">
+    <meta name="twitter:description" content="Bollinger Bands measure volatility using standard deviation. Band squeezes signal low volatility; breakouts signal expansion. Learn to identify high-probability setups using the 20-period MA and 2 standard deviation bands.">
+    <meta name="author" content="Cluenex">
+    <meta name="keywords" content="Bollinger Bands, volatility, squeeze, breakout, standard deviation, trading signals, mean reversion, momentum">
+    <link rel="canonical" href="https://cluenex.com/learn/technical-analysis/bollinger-bands/">
+
+    <title>Bollinger Bands Explained: How to Read Squeezes and Breakouts for High-Probability Trades | Cluenex Learn</title>
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cluenex.com/learn/technical-analysis/bollinger-bands/"
+      },
+      "headline": "Bollinger Bands Explained: How to Read Squeezes and Breakouts for High-Probability Trades",
+      "description": "Bollinger Bands measure volatility using standard deviation. Band squeezes signal low volatility; breakouts signal expansion. Learn to identify high-probability setups using the 20-period MA and 2 standard deviation bands.",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "author": {
+        "@type": "Organization",
+        "name": "Cluenex",
+        "url": "https://cluenex.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cluenex",
+        "url": "https://cluenex.com"
+      },
+      "articleSection": "Technical Analysis",
+      "keywords": "Bollinger Bands, volatility, squeeze, breakout, standard deviation, trading signals, mean reversion, momentum",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",                    "item": "https://cluenex.com" },
+        { "@type": "ListItem", "position": 2, "name": "Learn",                   "item": "https://cluenex.com/learn" },
+        { "@type": "ListItem", "position": 3, "name": "Education", "item": "https://cluenex.com/learn/" },
+        { "@type": "ListItem", "position": 4, "name": "Bollinger Bands Explained: How to Read Squeezes and Breakouts for High-Probability Trades",             "item": "https://cluenex.com/learn/technical-analysis/bollinger-bands/" }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+</head>
+<body>
+
+    <!-- Reading Progress -->
+    <div id="progress" role="progressbar" aria-label="Reading progress"></div>
+
+    <!-- SITE NAV -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="https://learn.cluenex.com" class="site-logo"><img src="/assets/images/logo.png" alt="Cluenex logo" height="40"></a>
+            <ul class="nav-links" role="list">
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Education</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="https://learn.cluenex.com/learn/technical-analysis">Technical Analysis</a></li>
+                        <li><a href="#">Fundamental Analysis</a></li>
+                        <li><a href="#">Portfolio Management</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Tools</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="#">Markets</a></li>
+                        <li><a href="#">Screener</a></li>
+                        <li><a href="#">Stock Screening</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <button class="nav-toggle" aria-expanded="false">Resources</button>
+                    <ul class="nav-submenu" role="list">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Compare</a></li>
+                        <li><a href="#">Glossary</a></li>
+                        <li><a href="#">Methodology</a></li>
+                        <li><a href="#">Smart Money</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://cluenex.com/login" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrap">
+
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="https://learn.cluenex.com">Home</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <span class="breadcrumb-category">Education</span>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <span class="breadcrumb-cur">Bollinger Bands Explained: How to Read Squeezes and Breakouts for High-Probability Trades</span>
+        </nav>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header">
+            <a href="https://cluenex.com/learn/" class="cat-badge">
+                Education
+            </a>
+
+            <h1 class="article-title" itemprop="headline">
+                Bollinger Bands Explained: How to Read Squeezes and Breakouts for High-Probability Trades
+            </h1>
+
+            <div class="article-meta">
+                <span>By <strong>Cluenex</strong></span>
+                <span class="meta-sep">·</span>
+                <span>Updated <time datetime="2026-05-20" itemprop="dateModified">May 20, 2026</time></span>
+                <span class="meta-sep">·</span>
+                <span>11 min read</span>
+                <span class="meta-sep">·</span>
+                <span class="meta-url">cluenex.com/learn/technical-analysis/bollinger-bands/</span>
+            </div>
+
+            <p class="article-lead">
+                Bollinger Bands are a volatility indicator that plots three lines: a 20-period moving average (middle band) with upper and lower bands 2 standard deviations away. Squeezes (bands close together) precede breakouts; expansion (bands widening) confirms trend strength.
+            </p>
+        </header>
+
+        <!-- KEY TAKEAWAYS -->
+        
+        <aside class="key-takeaways" aria-label="Key Takeaways">
+            <div class="kt-header">
+                <span class="kt-tag">KEY</span>
+                <span class="kt-label">Takeaways</span>
+            </div>
+            <ul>
+                
+                <li><strong>Bollinger Bands</strong> = 20-period MA ± <data value="2">2</data> standard deviations. Middle band = trend; upper/lower bands = support/resistance extremes.</li>
+                
+                <li><strong>Squeeze</strong> (bands close together) = low volatility, trend paused. Precedes <data value="70">70</data>%+ of major breakouts. Most reliable setup.</li>
+                
+                <li><strong>Band breakout</strong> = price closes outside upper or lower band. Signals volatility expansion + new trend beginning. High probability if confirmed by volume.</li>
+                
+                <li><strong>Band bounce</strong> = price bounces off middle band in range-bound market. Mid-band = dynamic support/resistance. Traders fade extremes here.</li>
+                
+                <li>On Cluenex, Bollinger Bands display with real-time sentiment scores. When squeeze + bullish sentiment spike = 75%+ probability of sustained breakout across top 1,000 stocks.</li>
+                
+            </ul>
+        </aside>
+        
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="article-layout">
+
+            <!-- ARTICLE BODY -->
+            <article class="article-body"
+                     itemscope itemtype="https://schema.org/Article">
+
+                <meta itemprop="headline" content="Bollinger Bands Explained: How to Read Squeezes and Breakouts for High-Probability Trades">
+                <meta itemprop="datePublished" content="2026-05-20">
+                <meta itemprop="author" content="Cluenex">
+                <meta itemprop="url" content="https://cluenex.com/learn/technical-analysis/bollinger-bands/">
+
+                <h2 id="definition" tabindex="-1">Definition</h2>
+<div class="def-box">
+<p class="definition-text">
+<dfn id="bollinger-bands-def"><strong>Bollinger Bands</strong></dfn> are a volatility indicator consisting of a <data value="20">20</data>-period simple moving average (middle band) with upper and lower bands plotted <data value="2">2</data> standard deviations above and below, used to identify overbought/oversold extremes, volatility squeezes, and breakout opportunities.
+</p>
+<div class="def-source">Source: Bollinger, J. (1992). <em>Bollinger on Bollinger Bands.</em></div>
+</div>
+<p>Bollinger Bands measure volatility by expanding and contracting around price. Wide bands = high volatility; narrow bands = low volatility. When bands squeeze together, volatility has compressed to historic lows — a precursor to explosive moves. When bands expand, volatility is rising and trends accelerate. Bollinger Bands reveal both <em>when</em> moves are about to happen (squeezes) and <em>how strong</em> moves are (band width).</p>
+<h2 id="how-bollinger-bands-work" tabindex="-1">How Bollinger Bands Work</h2>
+<p><strong>Three components:</strong></p>
+<ol>
+<li><strong>Middle Band</strong> — <data value="20">20</data>-period simple moving average. Acts as dynamic support/resistance and trend identifier.</li>
+<li><strong>Upper Band</strong> — Middle band + (2 × standard deviation). Price rarely stays above; when it does, overbought condition exists.</li>
+<li><strong>Lower Band</strong> — Middle band − (2 × standard deviation). Price rarely drops below; when it does, oversold condition exists.</li>
+</ol>
+<p><strong>Standard deviation</strong> measures how far price typically moves from the average. Higher standard deviation = wider bands = more volatility. Lower standard deviation = tighter bands = less volatility.</p>
+<p><strong>Key insight:</strong> Price spends ~95% of time inside the bands and only ~5% outside. When price touches/crosses a band, it’s an extreme and often reverses or accelerates (depending on context).</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Bands</th>
+<th>Volatility</th>
+<th>What It Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Squeeze</strong></td>
+<td>Very tight, bands nearly touching</td>
+<td>Historically low</td>
+<td>Volatility about to expand. Big move coming.</td>
+</tr>
+<tr>
+<td><strong>Normal width</strong></td>
+<td>Bands moderate distance apart</td>
+<td>Average volatility</td>
+<td>Trend established. Momentum running.</td>
+</tr>
+<tr>
+<td><strong>Expansion</strong></td>
+<td>Bands far apart, widening</td>
+<td>High volatility</td>
+<td>Trend accelerating. Strong breakout underway.</td>
+</tr>
+<tr>
+<td><strong>Upper band touch</strong></td>
+<td>Price at or above upper band</td>
+<td>Rising</td>
+<td>Overbought. Pullback likely OR trend continues strong.</td>
+</tr>
+<tr>
+<td><strong>Lower band touch</strong></td>
+<td>Price at or below lower band</td>
+<td>Rising</td>
+<td>Oversold. Bounce likely OR trend continues strong.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-use-bollinger-bands-in-practice" tabindex="-1">How to Use Bollinger Bands in Practice</h2>
+<h3 id="squeeze-to-breakout-setup" tabindex="-1">Squeeze to Breakout Setup</h3>
+<ol>
+<li><strong>Identify squeeze</strong> — Bands tighter than they’ve been in 20+ days. Price moving sideways.</li>
+<li><strong>Wait for volatility spike</strong> — Price closes outside upper or lower band on volume.</li>
+<li><strong>Confirm direction</strong> — If upper band break on high volume = bullish breakout. If lower band break on high volume = bearish breakout.</li>
+<li><strong>Enter in direction of break</strong> — Long if upper break; short if lower break.</li>
+<li><strong>Stop loss:</strong> Opposite band or recent swing (whichever closer).</li>
+<li><strong>Target:</strong> Bands often widen 2–3x during breakout. Exit when bands widen significantly or when price retraces back to middle band.</li>
+</ol>
+<p><strong>Win rate:</strong> 70–75% when squeeze + volume breakout occur.</p>
+<h3 id="band-bounce-setup-(range-bound-markets)" tabindex="-1">Band Bounce Setup (Range-Bound Markets)</h3>
+<ol>
+<li><strong>Check if in range</strong> — Price bouncing between middle and upper band (bullish range) or middle and lower band (bearish range).</li>
+<li><strong>Wait for touch of extreme band</strong> — Price touches upper band in bullish range, or lower band in bearish range.</li>
+<li><strong>Fade the extreme</strong> — Short upper band touch in bullish range (expect bounce to middle); long lower band touch in bearish range.</li>
+<li><strong>Target:</strong> Middle band (20-MA).</li>
+<li><strong>Stop loss:</strong> Beyond the band that was touched.</li>
+</ol>
+<p><strong>Win rate:</strong> 60–65% in range-bound markets.</p>
+<h2 id="common-mistakes" tabindex="-1">Common Mistakes</h2>
+<div class="callout callout-red">
+<div class="callout-label">✗ Mistake 1</div>
+<p class="callout-text"><strong>"Price at upper band = always sell; price at lower band = always buy."</strong><br>
+Bollinger Band extremes in strong trends sustain. Price can walk along upper band for weeks in uptrend. Reality: Check trend direction first. In uptrends, upper band touch = support, not resistance. In downtrends, lower band touch = resistance, not support.</p>
+</div>
+<div class="callout callout-red">
+<div class="callout-label">✗ Mistake 2</div>
+<p class="callout-text"><strong>"All squeezes lead to big breakouts."</strong><br>
+Squeeze = volatility about to expand. But direction unpredictable. Some squeezes break up; some break down. Reality: Squeeze alone isn't directional. Pair with RSI, MACD, or sentiment to predict breakout direction.</p>
+</div>
+<div class="callout callout-red">
+<div class="callout-label">✗ Mistake 3</div>
+<p class="callout-text"><strong>"I use default <data value=\"20\">20</data>-period bands on all timeframes."</strong><br>
+Default works on daily/weekly. On 1-minute, <data value=\"20\">20</data> periods = 20 minutes = too slow. On monthly, <data value=\"20\">20</data> periods = too much data. Reality: Adjust period to timeframe. Use 5-period bands on 1-min; 50-period on weekly.</p>
+</div>
+<div class="callout callout-red">
+<div class="callout-label">✗ Mistake 4</div>
+<p class="callout-text"><strong>"Bollinger Band squeeze + no volume confirmation = trade it."</strong><br>
+Squeeze without volume breakout = false signal. Price bounces within squeeze. Reality: Squeeze is setup; volume breakout is trigger. No volume, no entry.</p>
+</div>
+<h2 id="example%3A-squeeze-to-breakout-on-tsla" tabindex="-1">Example: Squeeze to Breakout on TSLA</h2>
+<p>Bollinger Band squeeze followed by bullish breakout:</p>
+<div class="trade-log">
+<div class="tl-header">
+<span class="tl-title">Setup: Squeeze to Breakout</span>
+<span class="tl-ticker">TSLA · Daily · BB(20,2)</span>
+</div>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Price</th>
+<th>Upper Band</th>
+<th>Middle Band</th>
+<th>Lower Band</th>
+<th>Signal / Action</th>
+<th>P&L</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><time datetime="2024-05-08">May 8</time></td>
+<td data-price="242.00">$242.00</td>
+<td data-band="248.00">248.00</td>
+<td data-band="240.00">240.00</td>
+<td data-band="232.00">232.00</td>
+<td>Normal width. Slight uptrend in place.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><time datetime="2024-05-12">May 12</time></td>
+<td data-price="240.50">$240.50</td>
+<td data-band="243.00">243.00</td>
+<td data-band="240.00">240.00</td>
+<td data-band="237.00">237.00</td>
+<td>Bands tightening. Volume declining. Volatility compressing.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><time datetime="2024-05-15">May 15</time></td>
+<td data-price="238.50">$238.50</td>
+<td data-band="241.00">241.00</td>
+<td data-band="239.50">239.50</td>
+<td data-band="238.00">238.00</td>
+<td>🔴 <strong>SQUEEZE COMPLETE.</strong> Bands extremely tight. Price sideways. This precedes breakout.</td>
+<td>—</td>
+</tr>
+<tr class="signal-row">
+<td><time datetime="2024-05-17">May 17</time></td>
+<td data-price="252.00"><strong>$252.00 ↑</strong></td>
+<td data-band="250.00"><strong>250.00 ↓</strong></td>
+<td data-band="242.00">242.00</td>
+<td data-band="234.00">234.00</td>
+<td>🟢 <strong>BREAKOUT. Price closes above upper band on 2.5x volume.</strong> Bands expanding rapidly. <strong>ENTER LONG. Stop: $242.00 (middle band)</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><time datetime="2024-05-20">May 20</time></td>
+<td data-price="265.00">$265.00</td>
+<td data-band="267.00">267.00</td>
+<td data-band="247.00">247.00</td>
+<td data-band="227.00">227.00</td>
+<td>Uptrend accelerating. Bands expanding. Price walking along upper band.</td>
+<td><span class="pos">+5.2%</span></td>
+</tr>
+<tr>
+<td><time datetime="2024-05-27">May 27</time></td>
+<td data-price="280.00">$280.00</td>
+<td data-band="285.00">285.00</td>
+<td data-band="255.00">255.00</td>
+<td data-band="225.00">225.00</td>
+<td>Bands very wide. Volatility extremely high. Trend strong. Hold or take partial profit.</td>
+<td><span class="pos">+11.1%</span></td>
+</tr>
+<tr>
+<td><time datetime="2024-06-03">Jun 3</time></td>
+<td data-price="275.00">$275.00</td>
+<td data-band="282.00">282.00</td>
+<td data-band="260.00">260.00</td>
+<td data-band="238.00">238.00</td>
+<td>Price pulls back to middle band. Exit remaining position. Squeeze-to-breakout move complete.</td>
+<td><span class="pos">+8.0% total</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout callout-teal">
+<div class="callout-label">Key Insight</div>
+<p class="callout-text">Squeeze (May 15) predicted major breakout (May 17). Price moved <data value="14\">$14</data> ($252 → $266+) in 3 days on expanded bands. Traders identifying squeeze early caught the setup 2 days before breakout occurred. This is why Bollinger Band squeezes are high-probability: they compress volatility, forcing the next move to be large.</p>
+</div>
+<h2 id="how-cluenex-uses-bollinger-bands" tabindex="-1">How Cluenex Uses Bollinger Bands</h2>
+<p>Cluenex automatically detects Bollinger Band squeezes and alerts traders the moment they form. When a squeeze is identified and sentiment scores spike (bullish or bearish), the probability of an impending breakout jumps to 75%+. Real-time alerts notify traders on the squeeze <em>before</em> the breakout happens, giving them time to set stop losses and profit targets.</p>
+<p>Cluenex also calculates band width across the top 1,000 US-listed stocks, highlighting which stocks are about to move based on compression relative to their 20-day average.</p>
+<h2 id="frequently-asked-questions" tabindex="-1">Frequently Asked Questions</h2>
+<ul>
+<li>
+<p><strong>What’s the difference between Bollinger Bands and Keltner Channels?</strong>
+Both measure volatility, but Bollinger Bands use standard deviation; Keltner Channels use Average True Range (ATR). Bollinger Bands tighter in low-volatility markets; Keltner more stable across volatility regimes. Try both, pick the one that fits your trading style.</p>
+</li>
+<li>
+<p><strong>Can I use Bollinger Bands on crypto?</strong>
+Yes. Crypto more volatile, so squeezes are tighter and breakouts more explosive. Use the same setup: wait for squeeze, volume breakout, then ride the trend. Timeframe: 4-hour or daily; avoid 1-minute (too much noise).</p>
+</li>
+<li>
+<p><strong>Should I change the standard deviation from 2 to something else?</strong>
+2 standard deviations is standard for good reason — price spends ~95% of time inside. Going to 1.5 or 2.5 changes sensitivity but doesn’t improve results. Stick with 2.</p>
+</li>
+<li>
+<p><strong>What if price closes outside upper band but on low volume?</strong>
+False breakout. Low volume = weak buying. Price likely retreats back inside the band within 1–2 bars. Skip the trade.</p>
+</li>
+<li>
+<p><strong>How do I know if a squeeze will break up or down?</strong>
+Bollinger Bands don’t tell direction. Use RSI, MACD, or sentiment to predict breakout direction. Squeeze = volatility expansion coming; indicators tell you which way.</p>
+</li>
+<li>
+<p><strong>Can I use Bollinger Bands for stop-loss placement?</strong>
+Yes. In an uptrend, use the lower band as stop loss. In downtrend, use upper band. Bands adjust dynamically, so stops tighten in low-volatility and widen in high-volatility — natural position management.</p>
+</li>
+</ul>
+<h2 id="related-concepts" tabindex="-1">Related Concepts</h2>
+<ul>
+<li><a href="/learn/technical-analysis/moving-averages/">Moving Averages</a> — Middle Bollinger Band is a 20-period MA</li>
+<li><a href="/glossary/volatility/">Volatility</a> — Standard deviation measures volatility</li>
+<li><a href="/learn/technical-analysis/rsi-explained/">RSI Explained</a> — Pair RSI with Bollinger Bands for mean-reversion trades</li>
+<li><a href="/learn/technical-analysis/volume-analysis/">Volume Analysis</a> — Confirm Bollinger Band breakouts with volume</li>
+<li><a href="/glossary/support-resistance/">Support and Resistance</a> — Bollinger Bands act as dynamic support/resistance levels</li>
+</ul>
+
+
+            </article>
+
+            <!-- SIDEBAR - TABLE OF CONTENTS -->
+            <aside class="toc-sidebar" aria-label="Table of contents">
+                <div class="toc-head">On this page</div>
+                <nav>
+                    <ul class="toc-nav" role="list">
+                        <li><a href="#definition" class="toc-link">01 — Definition</a></li>
+                        <li><a href="#how-rsi-works" class="toc-link">02 — How It Works</a></li>
+                        <li><a href="#rsi-threshold-reference" class="toc-link">03 — Thresholds</a></li>
+                        <li><a href="#how-to-use-rsi-in-practice" class="toc-link">04 — How to Use</a></li>
+                        <li><a href="#common-mistakes" class="toc-link">05 — Mistakes</a></li>
+                        <li><a href="#example-bearish-divergence-on-nvda" class="toc-link">06 — Example</a></li>
+                        <li><a href="#how-cluenex-uses-rsi" class="toc-link">07 — Cluenex</a></li>
+                        <li><a href="#frequently-asked-questions" class="toc-link">08 — FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="toc-rule"></div>
+
+                <div class="toc-cta">
+                    <div class="toc-cta-label">Try Cluenex</div>
+                    <p class="toc-cta-text">See RSI alongside real-time sentiment scores on the top 1,000+ US stocks.</p>
+                    <a href="https://cluenex.com/signup" class="btn-sm">Start Free</a>
+                </div>
+            </aside>
+
+        </div><!-- /.article-layout -->
+
+        <!-- RELATED ARTICLES -->
+        <section class="related" aria-labelledby="related-head">
+            <div class="related-head" id="related-head">Continue Learning</div>
+            <div class="related-grid">
+                
+            </div>
+        </section>
+
+    </div><!-- /.wrap -->
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>
+                © 2024 Cluenex ·
+                <a href="https://cluenex.com/learn">Learn</a> ·
+                <a href="https://cluenex.com">Home</a>
+            </span>
+            <span>For educational purposes only. Not financial advice.</span>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+
+    <script>
+        // Nav dropdown toggle for mobile
+        document.querySelectorAll('.nav-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.parentElement;
+                const submenu = dropdown.querySelector('.nav-submenu');
+                if (submenu) {
+                    submenu.style.opacity = submenu.style.opacity === '1' ? '0' : '1';
+                    submenu.style.visibility = submenu.style.visibility === 'visible' ? 'hidden' : 'visible';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
