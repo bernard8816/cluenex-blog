@@ -105,7 +105,7 @@ permalink: /index.html
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             color: inherit;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-            min-height: 280px;
+            min-height: 340px;
             overflow: hidden;
         }
         .article-card:hover {
@@ -158,10 +158,11 @@ permalink: /index.html
             font-size: 15px;
             color: var(--text-2);
             margin: 0 0 12px 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
             line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         .card-meta {
             font-size: 13px;
@@ -272,7 +273,7 @@ permalink: /index.html
                             <span class="category-pill">{{ item.data.category }}</span>
                         </div>
                         <h3 class="card-title">{{ item.data.title }}</h3>
-                        <p class="card-excerpt">{{ item.data.excerpt or (item.data.description | slice(0, 140)) }}</p>
+                        <p class="card-excerpt">{{ item.data.excerpt or (item.data.description | slice(0, 220)) }}</p>
                         <div class="card-meta">
                             <span class="read-time">{{ item.data.readingTime or 8 }} min read</span>
                             <span class="separator">·</span>
