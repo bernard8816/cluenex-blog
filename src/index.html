@@ -251,20 +251,24 @@ permalink: /index.html
         <section id="featured">
             <h2 class="section-title">Latest Learning</h2>
             <div class="articles-grid">
-                {%- set latestArticles = collections.posts | slice(0, 3) -%}
-                {%- for article in latestArticles %}
-                <a href="{{ article.url }}" class="article-card">
-                    <div class="card-category">
-                        <span class="category-pill">{{ article.data.category }}</span>
-                    </div>
-                    <h3 class="card-title">{{ article.data.title }}</h3>
-                    <p class="card-excerpt">{{ article.data.excerpt or (article.data.description | slice(0, 140)) }}</p>
-                    <div class="card-meta">
-                        <span class="read-time">{{ article.data.readingTime or 8 }} min read</span>
-                        <span class="separator">·</span>
-                        <time datetime="{{ article.data.date | isoDate }}">{{ article.data.date | dateFilter('MMM D') }}</time>
-                    </div>
-                </a>
+                {%- set allContent = collections.all | reverse -%}
+                {%- set count = 0 -%}
+                {%- for item in allContent %}
+                    {%- if count < 3 and item.data.category and item.url %}
+                    <a href="{{ item.url }}" class="article-card">
+                        <div class="card-category">
+                            <span class="category-pill">{{ item.data.category }}</span>
+                        </div>
+                        <h3 class="card-title">{{ item.data.title }}</h3>
+                        <p class="card-excerpt">{{ item.data.excerpt or (item.data.description | slice(0, 140)) }}</p>
+                        <div class="card-meta">
+                            <span class="read-time">{{ item.data.readingTime or 8 }} min read</span>
+                            <span class="separator">·</span>
+                            <time datetime="{{ item.data.date | isoDate }}">{{ item.data.date | dateFilter('MMM D') }}</time>
+                        </div>
+                    </a>
+                    {%- set count = count + 1 -%}
+                    {%- endif %}
                 {%- endfor %}
             </div>
         </section>
